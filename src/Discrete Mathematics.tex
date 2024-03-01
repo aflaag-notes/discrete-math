@@ -4,28 +4,28 @@
 % Packages %
 %%%%%%%%%%%%
 
-\usepackage{nyx-packages}
-\usepackage{nyx-styles}
-\usepackage{nyx-frames}
-\usepackage{nyx-title}
-\usepackage{nyx-macros}
+\usepackage{../Nyx/nyx-packages}
+\usepackage{../Nyx/nyx-styles}
+\usepackage{../Nyx/nyx-frames}
+\usepackage{../Nyx/nyx-title}
+\usepackage{../Nyx/nyx-macros}
 
 %%%%%%%%%%%%%%
 % Title-page %
 %%%%%%%%%%%%%%
 
-\logo{logo.png}
+\logo{../Nyx/logo.png}
 
 \institute{\curlyquotes{\hspace{0.25mm}Sapienza} Università di Roma}
 \faculty{Ingegneria dell'Informazione,\\Informatica e Statistica}
 \department{Dipartimento di Informatica}
 
 \title{Titolo}
-\subtitle{Appunti integrati con il libro "Titolo Libro", Autore 1, Autore 2, ...}
+\subtitle{TODO non so se scriverò qualcosa qui idk}
 
-\author{\textit{Author}\\TODO: DECOMMENTARE QUESTA SEZIONE}
+% \author{\textit{Author}\\TODO: DECOMMENTARE QUESTA SEZIONE}
 % \author{\textit{Author}\\Simone Bianco}
-% \author{\textit{Author}\\Alessio Bandiera}
+\author{\textit{Author}\\Alessio Bandiera}
 % \supervisor{Linus \textsc{Torvalds}}
 % \context{Well, I was bored\ldots}
 
@@ -54,13 +54,6 @@
     \chapter*{Informazioni e Contatti}      % \chapter* makes this a "fake" chapter
     \markboth{Informazioni e Contatti}{}    % Manually sets \leftmark (current chapter name)
     \addcontentsline{toc}{chapter}{Informazioni e Contatti}     % Manually adds chapter to ToC
-    
-    \subsubsection{Prerequisiti consigliati:}
-    \begin{itemize}
-        \item TODO: DA DECIDERE
-    \end{itemize}
-
-    \quad
 
     \subsubsection{Segnalazione errori ed eventuali migliorie:}
     
@@ -78,7 +71,7 @@
 
     \subsubsection{Contatti dell'autore e ulteriori link:}
     \begin{itemize}
-        \item TODO: DECOMMENTARE QUESTA SEZIONE
+        % \item TODO: DECOMMENTARE QUESTA SEZIONE
 
         % Simone
         % 
@@ -89,15 +82,50 @@
 
         % Alessio
         % 
-        % \item Github: \textbf{\href{https://github.com/aflaag}{https://github.com/aflaag}}
-        % \item Email: \textbf{\href{mailto:alessio.bandiera02@gmail.com}{alessio.bandiera02@gmail.com}}
-        % \item LinkedIn: \textbf{\href{https://www.linkedin.com/in/alessio-bandiera-a53767223/}{Alessio Bandiera}}
+        \item Github: \textbf{\href{https://github.com/aflaag}{https://github.com/aflaag}}
+        \item Email: \textbf{\href{mailto:alessio.bandiera02@gmail.com}{alessio.bandiera02@gmail.com}}
+        \item LinkedIn: \textbf{\href{https://www.linkedin.com/in/alessio-bandiera-a53767223/}{Alessio Bandiera}}
     \end{itemize}
 
     %%%%%%%%%%%%%%%%%%%%%
 
-    \chapter{New Chapter}
+    \chapter{Number Theory}
     
-    \section{New Section}
+    \section{TODO}
+    
+    \subsection{TODO}
+
+    TODO DA RIFARE TUTTA LA PARTE CHE HAI PERSO PERCHÉ HAI CANCELLATO IL FILE SEI UN IDIOTA
+
+    \begin{framedprop}{$\Primes$ is infinite}
+        There are infinitely many primes. With symbols $$\abs{\Primes} = + \infty$$
+    \end{framedprop}
+
+    \begin{proof}
+        By way of contradiction, assume that $\Primes$ is finite, thus $$\exists n \in \N \mid \Primes = \{p_1, \ldots, p_n\}$$ and let $x = p_1 \cdot \ldots \cdot p_n$. Since $x \neq p_1, \ldots, p_n$, then $x \not \Primes$, so $x$ is not a prime number; but $x$ can't be divided by any of the $p_1, \ldots, p_n$ either, because the remainder will always be 1. This means that $x$ is neither prime nor non-prime, which is a contradiction $\lightning$.
+    \end{proof}
+
+    \begin{framedprob}{$n^2 + n$ is even}
+        Show that $\forall n \in \N \quad n^2 + n$ is an even number.
+    \end{framedprob}
+
+    \begin{proof}
+        Note that $n^2 + n = n \cdot (n + 1)$, hence:
+
+        \begin{itemize}
+            \item if $n$ is even, then $$\exists k \in \N \mid n = 2k \implies n(n + 1) = 2k(2k + 1) =4k^2 + 2k = 2(k^2+k)$$ which is an even number;
+            \item if $n$ is odd, then $$\exists k \in N \mid n = 2k + 1 \implies n(n + 1) = (2k + 1)(2k + 2) = 4k^2 + 6k + 2 = 2(2k^2 + 3k +1)$$ which is an even number.
+        \end{itemize}
+    \end{proof}
+
+    \begin{framedprob}{$4n -1$ is not prime}
+        Show that there are infinitely many numbers of the form $4n -1$ that are not prime.
+    \end{framedprob}
+    
+    \begin{proof}
+        Note that $\forall x^2 \in \N - \{0\} \quad 4x^2 - 1 = (2x +1)(2x -1)$ which is a proper factorization of $4x^2 -1$, hence every perfect square yields a number of the form $4n -1$ which is not a prime number. Note that the number of perfect squares is infinite since the set of perfect square has the same cardinality of $\N$ since it's possibile to construct a bijective function as follows: $$\funcmap{f}{\N}{\N}{x}{x^2}$$
+
+        Also, note that this proof does not show \tit{every non-prime number of the form $4n -1$}, since that is outside the scope of the problem.
+    \end{proof}
 
 \end{document}
