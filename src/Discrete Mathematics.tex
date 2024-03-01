@@ -20,7 +20,7 @@
 \faculty{Ingegneria dell'Informazione,\\Informatica e Statistica}
 \department{Dipartimento di Informatica}
 
-\title{Titolo}
+\title{Discrete Mathematics}
 \subtitle{TODO non so se scriverò qualcosa qui idk}
 
 % \author{\textit{Author}\\TODO: DECOMMENTARE QUESTA SEZIONE}
@@ -95,7 +95,53 @@
     
     \subsection{TODO}
 
-    TODO DA RIFARE TUTTA LA PARTE CHE HAI PERSO PERCHÉ HAI CANCELLATO IL FILE SEI UN IDIOTA
+    \begin{frameddefn}{Peano axioms}
+        The \tbf{Peano axioms} are 5 axioms which define the set $\N$ of the \tbf{natural numbers}, and they are the following:
+
+        \begin{enumerate}[label=\roman*), font=\itshape]
+            \item $0 \in \N$
+            \item $\exists \func{\succfn}{\N}{\N}$, or equivalently, $\forall x \in \N \quad \succfn(x) \in \N$
+            \item $\forall x, y \in \N \quad x \neq y \implies \succfn(x) \neq \succfn(y)$
+            \item $\nexists x \in \N \mid \succfn(x) = 0$
+            \item $\forall S \subseteq \N \quad (0 \in S \land (\forall x \in S \quad \succfn(x) \in S)) \implies S = \N$
+        \end{enumerate}
+    \end{frameddefn}
+
+    \begin{framedprinc}{Induction principle}
+        Let $P$ be a property which is true for $n = 0$, thus $P(0)$ is true; also, for every $n \in \N$ we have that $P(n) \implies P(n + 1)$; then $P(n)$ is true for every $n \in \N$.
+
+        With symbols, using the formal logic notation, we have that $$\dfrac{P(0) \quad P(n) \implies P(n + 1)}{ \forall n \quad P(n )}$$
+    \end{framedprinc}
+
+    \begin{framedobs}{The fifth Peano axiom}
+        Note that the fifth Peano axiom is equivalent to the induction principle, since, it states that for every subset $S$ of $\N$ containing 0 and closed under $\succfn$ must be equal to $\N$ itself.
+    \end{framedobs}
+
+    \begin{framedprob}{Cardinality of the power set}
+    Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
+    \end{framedprob}
+
+    \proofind{
+        The statement will be shown by induction over $n$, the number of elements contained into $S$.
+    }{
+        $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
+    }{
+        Assume that the statement is true for some fixed integer $n$.
+    }{
+        It must be shown that the statement is true for $n + 1$ as well.
+    }
+
+    \begin{frameddefn}{Integers}
+        TODO
+    \end{frameddefn}
+
+    \begin{frameddefn}{Divisor}
+        TODO
+    \end{frameddefn}
+
+    \begin{example}[Divisors]
+        TODO
+    \end{example}
 
     \begin{framedprop}{$\Primes$ is infinite}
         There are infinitely many primes. With symbols $$\abs{\Primes} = + \infty$$
@@ -114,7 +160,7 @@
 
         \begin{itemize}
             \item if $n$ is even, then $$\exists k \in \N \mid n = 2k \implies n(n + 1) = 2k(2k + 1) =4k^2 + 2k = 2(k^2+k)$$ which is an even number;
-            \item if $n$ is odd, then $$\exists k \in N \mid n = 2k + 1 \implies n(n + 1) = (2k + 1)(2k + 2) = 4k^2 + 6k + 2 = 2(2k^2 + 3k +1)$$ which is an even number.
+            \item if $n$ is odd, then $$\exists k \in \N \mid n = 2k + 1 \implies n(n + 1) = (2k + 1)(2k + 2) = 4k^2 + 6k + 2 = 2(2k^2 + 3k +1)$$ which is an even number.
         \end{itemize}
     \end{proof}
 

@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Discrete Mathematics"] 1709301561 "Discrete Mathematics.bcf" "Discrete Mathematics.bbl" "Discrete Mathematics" 1709302543 2
-  "Discrete Mathematics.bcf" 1709302543 106652 37e852c976e785a4cd766daafd7c931b "pdflatex"
+["biber Discrete Mathematics"] 1709303397 "Discrete Mathematics.bcf" "Discrete Mathematics.bbl" "Discrete Mathematics" 1709303504 2
+  "Discrete Mathematics.bcf" 1709303504 106652 37e852c976e785a4cd766daafd7c931b "pdflatex"
   (generated)
   "Discrete Mathematics.bbl"
   "Discrete Mathematics.blg"
   (rewritten before read)
-["pdflatex"] 1709302541 "Discrete Mathematics.tex" "Discrete Mathematics.pdf" "Discrete Mathematics" 1709302543 0
+["pdflatex"] 1709303501 "Discrete Mathematics.tex" "Discrete Mathematics.pdf" "Discrete Mathematics" 1709303504 0
   "../Nyx/logo.png" 1709301089 91419 8de48debf770a599a084520c83ce5d80 ""
-  "../Nyx/nyx-frames.sty" 1709301089 3508 c7633debb38975bfc1fc8b9c12a3e32d ""
+  "../Nyx/nyx-frames.sty" 1709303083 3506 0f7d4278b40606e6d53fecdd6dbe79ef ""
   "../Nyx/nyx-macros.sty" 1709301089 9211 2272b34a4e433766f71c1d077d384fa4 ""
   "../Nyx/nyx-packages.sty" 1709301089 1827 eade9eba9efb0b37629e5b3d28208079 ""
   "../Nyx/nyx-styles.sty" 1709301089 2714 20ee228cdb20f06001caefe62143426a ""
@@ -333,12 +333,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1704400182 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1706774287 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1706774233 6769459 81b93e3770fa41b1fbccefd7d9671c17 ""
-  "Discrete Mathematics.aux" 1709302543 1724 a3bb5a92adf0cf15b7f4dec013da6bc4 "pdflatex"
+  "Discrete Mathematics.aux" 1709303504 1724 07ea2dd2fbed3219bf6a9e8db65ef513 "pdflatex"
   "Discrete Mathematics.bbl" 0 -1 0 "biber Discrete Mathematics"
-  "Discrete Mathematics.out" 1709302543 431 2391d5bd2f9c9e1ec0f72a75a8704803 "pdflatex"
-  "Discrete Mathematics.run.xml" 1709302543 2391 fafe5637752dd74fdd7bf8971d849a0a "pdflatex"
-  "Discrete Mathematics.tex" 1709302540 5721 346489d2d0261a5f58cf851f6c499022 ""
-  "Discrete Mathematics.toc" 1709302543 600 4aa9f0c64c8c9a54139e36604a4d250b "pdflatex"
+  "Discrete Mathematics.out" 1709303504 431 2391d5bd2f9c9e1ec0f72a75a8704803 "pdflatex"
+  "Discrete Mathematics.run.xml" 1709303504 2391 fafe5637752dd74fdd7bf8971d849a0a "pdflatex"
+  "Discrete Mathematics.tex" 1709303500 7806 59f7da64dac2aa440a2354ec20d04570 ""
+  "Discrete Mathematics.toc" 1709303504 600 4aa9f0c64c8c9a54139e36604a4d250b "pdflatex"
   (generated)
   "Discrete Mathematics.aux"
   "Discrete Mathematics.bcf"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  1 MAR 2024 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  1 MAR 2024 15:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1584,11 +1584,11 @@ File: t1qtm.fd 2009/09/25 v1.2 font definition file for T1/qtm
 LaTeX Font Warning: Font shape `T1/qtm/n/n' undefined
 (Font)              using `T1/qtm/m/n' instead on input line 92.
 
-Package cleveref Info: loaded `italian' language definitions on input line 117.
+Package cleveref Info: loaded `italian' language definitions on input line 119.
 [2
 
 {/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}]
-Package cleveref Info: loaded `italian' language definitions on input line 131.
+Package cleveref Info: loaded `italian' language definitions on input line 157.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1597,8 +1597,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `italian' language definitions on input line 131.
-[3] (./Discrete Mathematics.aux
+Package cleveref Info: loaded `italian' language definitions on input line 157.
+[3]
+Package cleveref Info: loaded `italian' language definitions on input line 177.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+Package cleveref Info: loaded `italian' language definitions on input line 177.
+[4] (./Discrete Mathematics.aux
 Package cleveref Info: loaded `italian' language definitions on input line 20.
 Package cleveref Info: loaded `italian' language definitions on input line 21.
 )
@@ -1612,18 +1623,18 @@ Package logreq Info: Writing requests to '"Discrete Mathematics".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63070 strings out of 477974
- 1456587 string characters out of 5839631
- 2524337 words of memory out of 5000000
- 82441 multiletter control sequences out of 15000+600000
+ 63114 strings out of 477974
+ 1457333 string characters out of 5839631
+ 2540997 words of memory out of 5000000
+ 82469 multiletter control sequences out of 15000+600000
  536948 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  119i,12n,125p,1211b,1858s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on "Discrete Mathematics.pdf" (5 pages, 278830 bytes).
+Output written on "Discrete Mathematics.pdf" (6 pages, 291417 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
+ 199 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
