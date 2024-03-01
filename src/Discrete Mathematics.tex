@@ -95,8 +95,8 @@
     
     \subsection{TODO}
 
-    \begin{frameddefn}{Peano axioms}
-        The \tbf{Peano axioms} are 5 axioms which define the set $\N$ of the \tbf{natural numbers}, and they are the following:
+    \begin{frameddefnEng}{Peano's axioms}
+        The \tbf{Peano's axioms} are 5 axioms which define the set $\N$ of the \tbf{natural numbers}, and they are the following:
 
         \begin{enumerate}[label=\roman*), font=\itshape]
             \item $0 \in \N$
@@ -105,21 +105,21 @@
             \item $\nexists x \in \N \mid \succfn(x) = 0$
             \item $\forall S \subseteq \N \quad (0 \in S \land (\forall x \in S \quad \succfn(x) \in S)) \implies S = \N$
         \end{enumerate}
-    \end{frameddefn}
+    \end{frameddefnEng}
 
-    \begin{framedprinc}{Induction principle}
+    \begin{framedprincEng}{Induction principle}
         Let $P$ be a property which is true for $n = 0$, thus $P(0)$ is true; also, for every $n \in \N$ we have that $P(n) \implies P(n + 1)$; then $P(n)$ is true for every $n \in \N$.
 
-        With symbols, using the formal logic notation, we have that $$\dfrac{P(0) \quad P(n) \implies P(n + 1)}{ \forall n \quad P(n )}$$
-    \end{framedprinc}
+        Using symbols, using the formal logic notation, we have that $$\dfrac{P(0) \quad P(n) \implies P(n + 1)}{ \forall n \quad P(n )}$$
+    \end{framedprincEng}
 
-    \begin{framedobs}{The fifth Peano axiom}
-        Note that the fifth Peano axiom is equivalent to the induction principle, since, it states that for every subset $S$ of $\N$ containing 0 and closed under $\succfn$ must be equal to $\N$ itself.
-    \end{framedobs}
+    \begin{framedobsEng}{The fifth Peano's axiom}
+        Note that the fifth Peano's axiom is equivalent to the induction principle, since, it states that for every subset $S$ of $\N$ containing 0 and closed under $\succfn$ must be equal to $\N$ itself.
+    \end{framedobsEng}
 
-    \begin{framedprob}{Cardinality of the power set}
+    \begin{framedprobEng}{Cardinality of the power set}
     Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
-    \end{framedprob}
+    \end{framedprobEng}
 
     \proofind{
         The statement will be shown by induction over $n$, the number of elements contained into $S$.
@@ -128,32 +128,36 @@
     }{
         Assume that the statement is true for some fixed integer $n$.
     }{
-        It must be shown that the statement is true for $n + 1$ as well.
+        It must be shown that, for a given set of elements $S$ such that $\abs{S} = n+ 1$, it holds true that $\abs{\powerset(S)} = 2 ^{n +1}$. Consider a subset $S' \subseteq S$ such that $\abs{S'} = \abs{S} - 1 = n + 1 - n = n$, hence for the inductive hypothesis we have that $\abs{\powerset(S')} = 2^n$. Thus, to get the cardinality of $\powerset(S)$ the $(n + 1)$-th element inside $S - S'$ must be paired with every of the sets contained inside $\powerset(S')$, hence $$\powerset(S) = 2 \cdot \powerset(S') = 2 \cdot 2^n = 2^{n + 1}$$
     }
 
-    \begin{frameddefn}{Integers}
+    \begin{frameddefnEng}{Integers}
         TODO
-    \end{frameddefn}
+    \end{frameddefnEng}
 
-    \begin{frameddefn}{Divisor}
+    \begin{frameddefnEng}{Divisor}
         TODO
-    \end{frameddefn}
+    \end{frameddefnEng}
 
     \begin{example}[Divisors]
         TODO
     \end{example}
 
-    \begin{framedprop}{$\Primes$ is infinite}
-        There are infinitely many primes. With symbols $$\abs{\Primes} = + \infty$$
-    \end{framedprop}
+    \begin{frameddefnEng}[label={primes}]{$\Primes$}
+        TODO
+    \end{frameddefnEng}
+
+    \begin{framedpropEng}{$\Primes$ is infinite}
+        There are infinitely many primes. Using symbols $$\abs{\Primes} = + \infty$$
+    \end{framedpropEng}
 
     \begin{proof}
-        By way of contradiction, assume that $\Primes$ is finite, thus $$\exists n \in \N \mid \Primes = \{p_1, \ldots, p_n\}$$ and let $x = p_1 \cdot \ldots \cdot p_n$. Since $x \neq p_1, \ldots, p_n$, then $x \not \Primes$, so $x$ is not a prime number; but $x$ can't be divided by any of the $p_1, \ldots, p_n$ either, because the remainder will always be 1. This means that $x$ is neither prime nor non-prime, which is a contradiction $\lightning$.
+        By way of contradiction, assume that $\Primes$ is finite, thus $$\exists n \in \N \mid \Primes = \{p_1, \ldots, p_n\}$$ and let $x = p_1 \cdot \ldots \cdot p_n$. Since $x \neq p_1, \ldots, p_n$, then $x \notin \Primes$, so $x$ is not a prime number; but $x$ can't be divided by any of the $p_1, \ldots, p_n$ either, because the remainder will always be 1. This means that $x$ is neither prime nor non-prime, which is a contradiction $\lightning$.
     \end{proof}
 
-    \begin{framedprob}{$n^2 + n$ is even}
+    \begin{framedprobEng}{$n^2 + n$ is even}
         Show that $\forall n \in \N \quad n^2 + n$ is an even number.
-    \end{framedprob}
+    \end{framedprobEng}
 
     \begin{proof}
         Note that $n^2 + n = n \cdot (n + 1)$, hence:
@@ -164,14 +168,88 @@
         \end{itemize}
     \end{proof}
 
-    \begin{framedprob}{$4n -1$ is not prime}
+    \begin{framedprobEng}{$4n -1$ is not prime}
         Show that there are infinitely many numbers of the form $4n -1$ that are not prime.
-    \end{framedprob}
+    \end{framedprobEng}
     
     \begin{proof}
         Note that $\forall x^2 \in \N - \{0\} \quad 4x^2 - 1 = (2x +1)(2x -1)$ which is a proper factorization of $4x^2 -1$, hence every perfect square yields a number of the form $4n -1$ which is not a prime number. Note that the number of perfect squares is infinite since the set of perfect square has the same cardinality of $\N$ since it's possibile to construct a bijective function as follows: $$\funcmap{f}{\N}{\N}{x}{x^2}$$
 
         Also, note that this proof does not show \tit{every non-prime number of the form $4n -1$}, since that is outside the scope of the problem.
     \end{proof}
+
+    \begin{frameddefnEng}[label={gcd}]{$\gcd$}
+        The $\tbf{gcd}$ (\tit{Greatest Common Divisor}) of two given numbers $a$, $b$ is the greatest of the divisors which $a$ and $b$ have in common. Using symbols, we say that $$d = \gcd(a, b) \iff \forall f \in \N : f \mid a \land f \mid b \quad f \mid d$$ If the $\gcd$ of two numbers is 1, they are said to be \tbf{coprime}.
+    \end{frameddefnEng}
+
+    \begin{example}[$\gcd$]
+        Given 15 and 63, we have that $\gcd(15, 63) = 3$.
+    \end{example}
+
+    % \begin{framedalgoEng}{Euclid's algorithm}
+    %     \textbf{Input}: Two natural numbers $a, b$.\\
+    %     \textbf{Output}: $\gcd(a, b)$.
+    %
+    %     \hrule
+    %     \begin{algorithmic}[1]
+    %         \Function{gcd}{$a, b$}
+    %             \State $r_0 := b$
+    %             \State $r_1 := a$
+    %             \State $r_{i - 1} := r_1$
+    %         \EndFunction
+    %     \end{algorithmic}
+    % \end{framedalgoEng}
+
+    % \begin{exmaple}[Euclid's algorithm]
+    %     TODO
+    % \end{example}
+
+    \begin{framedlemEng}[label={bezout}]{Bézout's identity}
+        Given a pair of numbers $a, b \in \Z$, there exists $x, y \in \Z$ such that the $\gcd(a, b)$ is a \href{https://en.wikipedia.org/wiki/Linear_combination}{linear combination} of $a$ and $b$. Using symbols $$\forall a, b \in \Z \quad \exists x, y \in \Z \mid \gcd(a, b) = ax + by$$
+    \end{framedlemEng}
+
+    \begin{proof}
+        Omitted.
+    \end{proof}
+
+    % \begin{example}[Bézout's identities]
+    %     TODO
+    % \end{example}
+
+    \begin{framedcorEng}[label={prime divisors cor}]{Prime divisors}
+        Given a natural number $n \in \N$ and a prime number $p \in \Primes$ , it holds true that $$p \nmid n \iff \gcd(p, a) = 1$$
+    \end{framedcorEng}
+
+    \proofiff{
+        Instead of proving that $p \nmid n \implies \gcd(p, n) = 1$, we will prove the contrapositive, namely that $\gcd(p, n) > 1 \implies p \mid n$. Hence, since $\gcd(p, n) \mid p$ by definition, because $p \in \Primes$ then $\gcd(p, n)$ must be either 1 or $p$ itself, and we assumed that $\gcd(p, n) > 1$, $\gcd(p, n)$ must be 1, which means that $p \mid n$.
+    }{
+        Note that $\gcd(p, n) = 1 \implies \exists x, y \in \Z \mid 1 = px + ny$ by the \cref{bezout}, hence if $p \mid a$ then $p \mid 1$ by the \cref{gcd}, which is impossibile because $p \in \Primes$ by the \cref{primes}.
+    }
+
+    \begin{framedlemEng}{Prime divisors}
+        Given a pair of numbers $a, b \in \N$, and a prime number $p \in \Primes$ such that $p \mid ab$, then either $p \mid a$ or $p \mid b$. Using symbols $$\forall a, b \in \N \quad \exists p \in \Primes : p \mid ab \implies p \mid a \lor p \mid b$$
+    \end{framedlemEng}
+
+    \begin{proof}
+        Without loss of generality, assume that $p \nmid a$, thus $\gcd(p, a) = 1$ by the \cref{prime divisors cor}; hence, for the \cref{bezout}, we have that $$\exists x, y \in \Z \mid 1 = px + ay \iff b = bpx + bay$$ Note that $p \mid ab \iff \exists k \in \Z \mid pk = ab$ which means that $$b = bpx + pky = p(bx+ky) \iff p \mid b$$ The same argument can be used to show that $p \nmid b \implies p \mid a$.
+    \end{proof}
+
+    \begin{framedthmEng}{Fundamental theorem of arithmetic}
+        The \tbf{fundamental theorem of arithmetic}, also known as the \tbf{UPF} theorem (\tit{Unique Prime Factorization}) states that for every natural number $n \in \N$ there exists a unique prime factorization for $n$. Using symbols $$\forall n \in \N \quad \exists ! p_1, \ldots, p_k \in \Primes, e_1, \ldots, e_k \in \N \mid n = {p_1}^{e_1} \cdot \ldots \cdot {p_k}^{e_k}$$
+    \end{framedthmEng}
+
+    \begin{proof}
+        Omitted.
+    \end{proof}
+
+    \begin{framedpropEng}{The $4n - 3$ set}
+        Consider the following set: $$S := \{4n - 3 \mid n \in \N\}$$
+
+        \begin{enumerate}
+            \item Show that $S$ closed under multiplication.
+            \item A number $p$ is said to be \tit{$S$-prime} if and only if $p$ is the product of exactly two factors of $S$; for example, even though $3 ^2 = 9 \notin \Primes$ we have that $9 = 1 \cdot 9$, and since $1 = (4 \cdot 1 - 3)$ and $9 = (4 \cdot 3 - 3)$, then $9$ is $S$-prime. Is the set of $S$-prime numbers infinite?
+            \item TODO
+        \end{enumerate}
+    \end{framedpropEng}
 
 \end{document}
