@@ -121,7 +121,7 @@
     Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
     \end{framedprobEng}
 
-    \proofind{
+    \proofindEng{
         The statement will be shown by induction over $n$, the number of elements contained into $S$.
     }{
         $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
@@ -186,23 +186,25 @@
         Given 15 and 63, we have that $\gcd(15, 63) = 3$.
     \end{example}
 
-    % \begin{framedalgoEng}{Euclid's algorithm}
-    %     \textbf{Input}: Two natural numbers $a, b$.\\
-    %     \textbf{Output}: $\gcd(a, b)$.
-    %
-    %     \hrule
-    %     \begin{algorithmic}[1]
-    %         \Function{gcd}{$a, b$}
-    %             \State $r_0 := b$
-    %             \State $r_1 := a$
-    %             \State $r_{i - 1} := r_1$
-    %         \EndFunction
-    %     \end{algorithmic}
-    % \end{framedalgoEng}
+    \begin{framedalgoEng}[label={euclid}]{Euclid's algorithm}
+        \textbf{Input}: Two natural numbers $a, b$.\\
+        \textbf{Output}: $\gcd(a, b)$.
 
-    % \begin{exmaple}[Euclid's algorithm]
-    %     TODO
-    % \end{example}
+        \hrule
+        \begin{algorithmic}[1]
+            \Function{gcd}{$a, b$}
+                \State TODO
+                % \State $r_0 := b$
+                % \State $r_1 := a$
+                % \State $r_{i - 1} := r_1$
+            \EndFunction
+        \end{algorithmic}
+    \end{framedalgoEng}
+
+    \begin{example}[Euclid's algorithm]
+        \label{euclid example}
+        To compute the $\gcd(341, 527)$, using the \cref{euclid}, we get the following: $$\centeredsoe{527 = 341 \cdot 1 + 186 \\ 341 = 186 \cdot 1 + 155 \\ 186 = 155 \cdot 1 + 31 \\ 155 = 31 \cdot 5 + 0}$$ hence we have that $$\gcd(341, 527) = 31$$
+    \end{example}
 
     \begin{framedlemEng}[label={bezout}]{Bézout's identity}
         Given a pair of numbers $a, b \in \Z$, there exists $x, y \in \Z$ such that the $\gcd(a, b)$ is a \href{https://en.wikipedia.org/wiki/Linear_combination}{linear combination} of $a$ and $b$. Using symbols $$\forall a, b \in \Z \quad \exists x, y \in \Z \mid \gcd(a, b) = ax + by$$
@@ -212,15 +214,15 @@
         Omitted.
     \end{proof}
 
-    % \begin{example}[Bézout's identities]
-    %     TODO
-    % \end{example}
+    \begin{example}[Bézout's identities]
+        Using the \cref{euclid example}, in order to compute the Bézout's identity of 341 and 527, we need to do the following: $$31 = 186 - 155 \cdot 1 = 186 - (341 - 186 \cdot 1) = 2 \cdot 186 - 341 = 2 \cdot (527 - 341) - 341 = 2 \cdot 527 - 3 \cdot 341$$ thus the Bézout's identity is $$31 = 2 \cdot 527 - 3\cdot 341$$
+    \end{example}
 
     \begin{framedcorEng}[label={prime divisors cor}]{Prime divisors}
         Given a natural number $n \in \N$ and a prime number $p \in \Primes$ , it holds true that $$p \nmid n \iff \gcd(p, a) = 1$$
     \end{framedcorEng}
 
-    \proofiff{
+    \proofiffEng{
         Instead of proving that $p \nmid n \implies \gcd(p, n) = 1$, we will prove the contrapositive, namely that $\gcd(p, n) > 1 \implies p \mid n$. Hence, since $\gcd(p, n) \mid p$ by definition, because $p \in \Primes$ then $\gcd(p, n)$ must be either 1 or $p$ itself, and we assumed that $\gcd(p, n) > 1$, $\gcd(p, n)$ must be 1, which means that $p \mid n$.
     }{
         Note that $\gcd(p, n) = 1 \implies \exists x, y \in \Z \mid 1 = px + ny$ by the \cref{bezout}, hence if $p \mid a$ then $p \mid 1$ by the \cref{gcd}, which is impossibile because $p \in \Primes$ by the \cref{primes}.
@@ -242,14 +244,22 @@
         Omitted.
     \end{proof}
 
-    \begin{framedpropEng}{The $4n - 3$ set}
+    \begin{framedprobEng}{The $4n - 3$ set}
         Consider the following set: $$S := \{4n - 3 \mid n \in \N\}$$
 
         \begin{enumerate}
             \item Show that $S$ closed under multiplication.
-            \item A number $p$ is said to be \tit{$S$-prime} if and only if $p$ is the product of exactly two factors of $S$; for example, even though $3 ^2 = 9 \notin \Primes$ we have that $9 = 1 \cdot 9$, and since $1 = (4 \cdot 1 - 3)$ and $9 = (4 \cdot 3 - 3)$, then $9$ is $S$-prime. Is the set of $S$-prime numbers infinite?
+            \item A number $p$ is said to be \tit{$S$-prime} if and only if $p$ is the product of exactly two factors of $S$; for example, even though $3 ^2 = 9 \notin \Primes$ we have that $9 = 1 \cdot 9$, and since $1 = 4 \cdot 1 - 3 \in S$ and $9 = 4 \cdot 3 - 3 \in S$, then $9$ is $S$-prime. Is the set of $S$-prime numbers infinite?
             \item TODO
         \end{enumerate}
-    \end{framedpropEng}
+    \end{framedprobEng}
+
+    \begin{proof}
+        \quad
+        \begin{enumerate}
+            \item To show that $S$ is closed under multiplication, it suffices to show that $$\forall a, b \in \N \quad (4a -3)(4b- 3) = 16ab -12a -12b +9 = 4(ab - 3a -3b +3) - 3 \in S$$
+            \item TODO
+        \end{enumerate}
+    \end{proof}
 
 \end{document}
