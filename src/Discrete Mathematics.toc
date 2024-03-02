@@ -7,3 +7,6 @@
 \contentsline {chapter}{\numberline {1}Number Theory}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}TODO}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}TODO}{2}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Solved exercises}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}TODO}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Induction}{6}{subsection.1.2.2}%

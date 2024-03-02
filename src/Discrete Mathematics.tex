@@ -117,20 +117,6 @@
         Note that the fifth Peano's axiom is equivalent to the induction principle, since, it states that for every subset $S$ of $\N$ containing 0 and closed under $\succfn$ must be equal to $\N$ itself.
     \end{framedobsEng}
 
-    \begin{framedprobEng}{Cardinality of the power set}
-    Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
-    \end{framedprobEng}
-
-    \proofindEng{
-        The statement will be shown by induction over $n$, the number of elements contained into $S$.
-    }{
-        $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
-    }{
-        Assume that the statement is true for some fixed integer $n$.
-    }{
-        It must be shown that, for a given set of elements $S$ such that $\abs{S} = n+ 1$, it holds true that $\abs{\powerset(S)} = 2 ^{n +1}$. Consider a subset $S' \subseteq S$ such that $\abs{S'} = \abs{S} - 1 = n + 1 - n = n$, hence for the inductive hypothesis we have that $\abs{\powerset(S')} = 2^n$. Thus, to get the cardinality of $\powerset(S)$ the $(n + 1)$-th element inside $S - S'$ must be paired with every of the sets contained inside $\powerset(S')$, hence $$\powerset(S) = 2 \cdot \powerset(S') = 2 \cdot 2^n = 2^{n + 1}$$
-    }
-
     \begin{frameddefnEng}{Integers}
         TODO
     \end{frameddefnEng}
@@ -147,35 +133,12 @@
         TODO
     \end{frameddefnEng}
 
-    \begin{framedpropEng}{$\Primes$ is infinite}
+    \begin{framedpropEng}[label={primes inf}]{$\Primes$ is infinite}
         There are infinitely many primes. Using symbols $$\abs{\Primes} = + \infty$$
     \end{framedpropEng}
 
     \begin{proof}
         By way of contradiction, assume that $\Primes$ is finite, thus $$\exists n \in \N \mid \Primes = \{p_1, \ldots, p_n\}$$ and let $x = p_1 \cdot \ldots \cdot p_n$. Since $x \neq p_1, \ldots, p_n$, then $x \notin \Primes$, so $x$ is not a prime number; but $x$ can't be divided by any of the $p_1, \ldots, p_n$ either, because the remainder will always be 1. This means that $x$ is neither prime nor non-prime, which is a contradiction $\lightning$.
-    \end{proof}
-
-    \begin{framedprobEng}{$n^2 + n$ is even}
-        Show that $\forall n \in \N \quad n^2 + n$ is an even number.
-    \end{framedprobEng}
-
-    \begin{proof}
-        Note that $n^2 + n = n \cdot (n + 1)$, hence:
-
-        \begin{itemize}
-            \item if $n$ is even, then $$\exists k \in \N \mid n = 2k \implies n(n + 1) = 2k(2k + 1) =4k^2 + 2k = 2(k^2+k)$$ which is an even number;
-            \item if $n$ is odd, then $$\exists k \in \N \mid n = 2k + 1 \implies n(n + 1) = (2k + 1)(2k + 2) = 4k^2 + 6k + 2 = 2(2k^2 + 3k +1)$$ which is an even number.
-        \end{itemize}
-    \end{proof}
-
-    \begin{framedprobEng}{$4n -1$ is not prime}
-        Show that there are infinitely many numbers of the form $4n -1$ that are not prime.
-    \end{framedprobEng}
-    
-    \begin{proof}
-        Note that $\forall x^2 \in \N - \{0\} \quad 4x^2 - 1 = (2x +1)(2x -1)$ which is a proper factorization of $4x^2 -1$, hence every perfect square yields a number of the form $4n -1$ which is not a prime number. Note that the number of perfect squares is infinite since the set of perfect square has the same cardinality of $\N$ since it's possibile to construct a bijective function as follows: $$\funcmap{f}{\N}{\N}{x}{x^2}$$
-
-        Also, note that this proof does not show \tit{every non-prime number of the form $4n -1$}, since that is outside the scope of the problem.
     \end{proof}
 
     \begin{frameddefnEng}[label={gcd}]{$\gcd$}
@@ -243,6 +206,49 @@
     \begin{proof}
         Omitted.
     \end{proof}
+
+    \section{Solved exercises}
+
+    \subsection{TODO}
+
+    \begin{framedprobEng}{$n^2 + n$ is even}
+        Show that $\forall n \in \N \quad n^2 + n$ is an even number.
+    \end{framedprobEng}
+
+    \begin{proof}
+        Note that $n^2 + n = n \cdot (n + 1)$, hence:
+
+        \begin{itemize}
+            \item if $n$ is even, then $$\exists k \in \N \mid n = 2k \implies n(n + 1) = 2k(2k + 1) =4k^2 + 2k = 2(k^2+k)$$ which is an even number;
+            \item if $n$ is odd, then $$\exists k \in \N \mid n = 2k + 1 \implies n(n + 1) = (2k + 1)(2k + 2) = 4k^2 + 6k + 2 = 2(2k^2 + 3k +1)$$ which is an even number.
+        \end{itemize}
+    \end{proof}
+
+    \begin{framedprobEng}{$4n -1$ is not prime}
+        Show that there are infinitely many numbers of the form $4n -1$ that are not prime.
+    \end{framedprobEng}
+    
+    \begin{proof}
+        Note that $\forall x^2 \in \N - \{0\} \quad 4x^2 - 1 = (2x +1)(2x -1)$ which is a proper factorization of $4x^2 -1$, hence every perfect square yields a number of the form $4n -1$ which is not a prime number. Note that the number of perfect squares is infinite since the set of perfect square has the same cardinality of $\N$ since it's possibile to construct a bijective function as follows: $$\funcmap{f}{\N}{\N}{x}{x^2}$$
+
+        Also, note that this proof does not show \tit{every non-prime number of the form $4n -1$}, since that is outside the scope of the problem.
+    \end{proof}
+
+    \subsection{Induction}
+
+    \begin{framedprobEng}{Cardinality of the power set}
+    Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
+    \end{framedprobEng}
+
+    \proofindEng{
+        The statement will be shown by induction over $n$, the number of elements contained into $S$.
+    }{
+        $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
+    }{
+        Assume that the statement is true for some fixed integer $n$.
+    }{
+        It must be shown that, for a given set of elements $S$ such that $\abs{S} = n+ 1$, it holds true that $\abs{\powerset(S)} = 2 ^{n +1}$. Consider a subset $S' \subseteq S$ such that $\abs{S'} = \abs{S} - 1 = n + 1 - n = n$, hence for the inductive hypothesis we have that $\abs{\powerset(S')} = 2^n$. Thus, to get the cardinality of $\powerset(S)$ the $(n + 1)$-th element inside $S - S'$ must be paired with every of the sets contained inside $\powerset(S')$, hence $$\powerset(S) = 2 \cdot \powerset(S') = 2 \cdot 2^n = 2^{n + 1}$$
+    }
 
     \begin{framedprobEng}{The $4n - 3$ set}
         Consider the following set: $$S := \{4n - 3 \mid n \in \N\}$$
