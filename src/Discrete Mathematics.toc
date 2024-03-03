@@ -1,5 +1,4 @@
-\babel@toc {italian}{}\relax 
-\babel@toc {italian}{}\relax 
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{Informazioni e Contatti}{1}{chapter*.2}%
 \contentsline {subsubsection}{Segnalazione errori ed eventuali migliorie:}{1}{subsubsection*.3}%
 \contentsline {subsubsection}{Licenza di distribuzione:}{1}{subsubsection*.4}%
