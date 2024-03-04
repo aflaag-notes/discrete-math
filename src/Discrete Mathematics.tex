@@ -283,7 +283,7 @@
     \end{framedprop}
 
     \begin{proof}
-    Suppose that the harmonic series converges, thus $$\exists S \mid \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = S$$ then we have that $$\centeredsoe{S = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \dfrac{1}{5} + \dfrac{1}{6} \ldots = \\ = \rbk{1 + \dfrac{1}{2}}} + \rbk{\dfrac{1}{3} + \dfrac{1}{4}} + \rbf{\dfrac{1}{5} + \dfrac{1}{6}} + \ldots > \\ > \rbk{\dfrac{1}{2} + \dfrac{1}{2}}} + \rbk{\dfrac{1}{4} + \dfrac{1}{4}} + \rbf{\dfrac{1}{6} + \dfrac{1}{6}} + \ldots = \\ = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots = S$$ implying that $S > S \lightning$.
+        Suppose that the harmonic series converges, thus $$\exists S \mid \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = S$$ then we have that $$\centeredsoe{S = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \dfrac{1}{5} + \dfrac{1}{6} \ldots = \\ = \rbk{1 + \dfrac{1}{2}} + \rbk{\dfrac{1}{3} + \dfrac{1}{4}} + \rbk{\dfrac{1}{5} + \dfrac{1}{6}} + \ldots > \\ > \rbk{\dfrac{1}{2} + \dfrac{1}{2}} + \rbk{\dfrac{1}{4} + \dfrac{1}{4}} + \rbk{\dfrac{1}{6} + \dfrac{1}{6}} + \ldots = \\ = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots = S}$$ implying that $S > S \lightning$.
     \end{proof}
 
     \begin{frameddefn}[label={NON LO SO CAMBIAMI}]{TODO}
@@ -295,8 +295,20 @@
     \end{frameddefn}
 
     \begin{proof}
-        Consider the following inequality $$\forall n \in \N \quad \prod_{p \in \Primes TODO}{\rbk{\dfrac{p}{p - 1}}} > \sum_{k = 1}^{n}{\dfrac{1}{k}}$$ this can be proven by using the MISSING CREF as follows: $$\forall p \in \Primes \mid p \leq n \quad \dfrac{p}{p - 1} = \dfrac{1}{\dfrac{p - 1}{p}} = \dfrac{1}{1 - p} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p^k}} = 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \ldots$$ which is the infinite sum of the reciprocal of the powers of some prime number $p$, meaning that $$\exists p_1, \ldots p_j \in \Primes \mid \prod_{p \in \Primes TODO}{\rbk{\dfrac{p}{p - 1}}} = p_1 \cdot \ldots \cdot p_j = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}}$$ and thanks to the \cref{upf} this product expands to the sum of the reciprocal of every natural number that has $p_1, \ldots, p_j$ in his prime factorization, namely $$TODO$$ and since $p_1, \ldots, p_j <= n$, because of the \cref{upf} this summation must contain at least every term contained inside $\sum_{k = 1}^{n}{\dfrac{1}{k}}$, which proves the inequality.
+        Consider the following inequality: $$\forall n \in \N \quad \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} > \sum_{k = 1}^{n}{\dfrac{1}{k}}$$ We can prove it with as follows:
+
+        \begin{itemize}
+            \item for any given $p \in \Primes$, the fraction $\dfrac{p}{p - 1}$ can be rewritten as follows, by using the MISSINGCREF: $$\forall p \in \Primes \mid p \leq n \quad \dfrac{p}{p - 1} = \dfrac{1}{\frac{p - 1}{p}} = \dfrac{1}{1 - \dfrac{1}{p}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p^k}} = 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \ldots$$ which is the infinite sum of the reciprocal of the powers of some prime number $p$
+            \item this means that $$\exists p_1, \ldots, p_j \in \Primes \mid \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} = p_1 \cdot \ldots \cdot p_j  \implies \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} =  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}}$$
+            \item thus, thanks to the \cref{upf} this product expands to the sum of the reciprocal of every natural number that contains $p_1, \ldots, p_j$ in his prime factorization, namely $$\exists e_1, \ldots, e_j \in \N \mid\sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^{e_1} \cdot \ldots \cdot p_j^{e_j}}}$$
+            \item finally, since $p_1, \ldots, p_j <= n$ this summation must contain at least every term contained inside $\displaystyle \sum_{k = 1}^{n}{\dfrac{1}{k}}$, which proves the inequality.
+        \end{itemize}
     \end{proof}
-    palle
+
+    Now consider the following: $$\centeredsoe{\displaystyle \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} < \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} \iff \\ \displaystyle \iff \log \rbk{\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}}} < \rbk{\prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}}} = \\ \displaystyle = \sum_{p \in \Primes \mid p \le n}{\log \rbk{\dfrac{p}{p - 1}}} = \sum_{p \in \Primes \mid p \le n}{\rbk{\log p - \log (p - 1)}}= \sum_{p \in \Primes \mid p \le n}{\int_{p - 1}^{p}{\dfrac{1}{x} \diff x}}}$$ and consider the area under the curve $\dfrac{1}{x}$ within the $[p - 1, p]$ interval, for some prime number $p$:
+
+    TODO METTI GRAFICO
+
+    since $$\forall x_1, x_2 \in \R \quad x_1 < x_2 \iff \dfrac{1}{x_1} > \dfrac{1}{x_2}$$ the function $\dfrac{1}{x}$ is monotonically decreasing, and in particular $$\forall p \in \Primes \mid p \le n \quad p -1 < p \implies \dfrac{1}{p - 1} > \dfrac{1}{p}$$ whic implies that the area under the curve $\dfrac{1}{x}$ within the $\dfrac[p-1, p]$ must be smaller than the area of the rectangle that has a base of of $p - (p - 1) = p - p + 1 = 1$ and an height of $\dfrac{1}{p - 1}$, namely an area of $1 \cdot \dfrac{1}{p - 1} = \dfrac{1}{1 - p}$. This implies that $$\sum_{p \in \Primes \mid p \le n}{\int_{p - 1}^p{\dfrac{1}{x} \diff x}} < \sum_{p \in \Primes \mid p \le n}{\dfrac{1}{p - 1}} < \sum_{p \in \Primes \mid p \le n}{TODO}$$
 
 \end{document}

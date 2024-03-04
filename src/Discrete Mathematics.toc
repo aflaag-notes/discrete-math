@@ -8,3 +8,4 @@
 \contentsline {section}{\numberline {1.2}Solved exercises}{5}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}TODO}{5}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Induction}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Series}{7}{subsection.1.2.3}%
