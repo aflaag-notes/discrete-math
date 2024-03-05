@@ -10,7 +10,12 @@
 
 \def\courseName{Discrete Math}
 
-\def\coursePrerequisites{TODO: idk}
+\def\coursePrerequisites{
+    \begin{itemize}
+        \item Differential Calculus
+        \item Integral Calculus
+    \end{itemize}
+}
 
 \def\book{"TODO",\\Author TODO, ...}
 
@@ -87,7 +92,7 @@
 
     %%%%%%%%%%%%%%%%%%%%%
 
-    \chapter{Number Theory}
+    \chapter{TODO}
     
     \section{TODO}
     
@@ -164,6 +169,10 @@
         \end{algorithmic}
     \end{framedalgo}
 
+    \idea{
+        TODO
+    }
+
     \begin{example}[Euclid's algorithm]
         \label{euclid example}
         To compute the $\gcd(341, 527)$, using the \cref{euclid}, we get the following: $$\centeredsoe{527 = 341 \cdot 1 + 186 \\ 341 = 186 \cdot 1 + 155 \\ 186 = 155 \cdot 1 + 31 \\ 155 = 31 \cdot 5 + 0}$$ hence we have that $$\gcd(341, 527) = 31$$
@@ -182,7 +191,7 @@
     \end{example}
 
     \begin{framedcor}[label={prime divisors cor}]{Prime divisors}
-        Given a natural number $n \in \N$ and a prime number $p \in \Primes$ , it holds true that $$p \nmid n \iff \gcd(p, n) = 1$$
+        Given a natural number $n \in \N$ and a prime number $p \in \Primes$ , it holds that $$p \nmid n \iff \gcd(p, n) = 1$$
     \end{framedcor}
 
     \proofiff{
@@ -221,6 +230,44 @@
         Assume that there exists an $x$ such that $$\sqrt 2 = 1 + \dfrac{1}{x}$$ then rearrange as follows: $$\sqrt 2 = 1 + \dfrac{1}{x} \iff \sqrt 2 - 1 = \dfrac{1}{x} \iff x = \dfrac{1}{\sqrt 2 - 1} = \dfrac{\sqrt 2 + 1}{(\sqrt 2 - 1)(\sqrt 2+ 1)} = \sqrt 2 + 1$$ and now we can substitute $\sqrt 2$ with $1 + \dfrac{1}{x}$, yielding the following: $$x = 1 + \dfrac{1}{x} + 1 = 2 + \dfrac{1}{x}$$ Finally, this equation can be used to construct the infinite continued fraction of $\sqrt 2$, like this: $$x = 2 + \dfrac{1}{x} = 2 + \dfrac{1}{2 + \dfrac{1}{x}} = 2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\ddots}}}$$ implying that $$\sqrt 2 = 1 + \dfrac{1}{x} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\ddots}}} = [1; 2, 2, 2] = [1; \overline 2]$$
     \end{example}
 
+    \begin{framedalgo}[label={cont frac alg}]{Continued fractions}
+        Given a continued fraction $[a_0; a_1, \ldots, a_n]$, the corresponding number can be computed by constructing the following table (note that $N_0: = 1$ and $D_0: = 0$, meaning that $a$ and $N, D$ differ by 1 position at each column)
+
+        \begin{center}
+            \begin{tabular}{c|c|c|c|c|c|c} 
+                C.F. & & $a_0$ & $a_1$ & $a_2$ & $\ldots$ & $a_n$ \\
+                \hline
+                $N$ & 1 & $a_0$ & $a_1 \cdot N_1 + N_0$ & $a_2 \cdot N_2 + N_1$ & $\ldots$ & $a_n \cdot N_n + N_{n - 1}$ \\
+                \hline
+                $D$ & 0 & 1 & $a_1 \cdot D_1 + D_0$ & $a_2 \cdot D_2 + D_1$ & $\ldots$ & $a_n \cdot D_n + D_{n - 1}$ \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+        then, the answer is $$[a_0; a_1, \ldots, a_n] = \dfrac{N_{n + 1}}{D_{n + 1}}$$
+    \end{framedalgo}
+
+    \idea{
+        TODO
+    }
+
+    \begin{example}
+        To compute the number corresponding to the continued fraction $[2;1,3,1,5,4]$, the following table can be constructed:
+
+        \begin{center}
+            \begin{tabular}{c|c|c|c|c|c|c|c} 
+                C.F. & & 2 & 1 & 3 & 1 & 5 & 4 \\
+                \hline
+                $N$ & 1 & 2 & 3 & 11 & 14 & 81 & 338 \\
+                \hline
+                $D$ & 0 & 1 & 1 & 4 & 5 & 29 & 121 \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+        meaning that $$[2;1,3,1,5,4] = \dfrac{338}{121}$$
+    \end{example}
+
     \begin{frameddefn}{The golden ratio}
         TODO
     \end{frameddefn}
@@ -230,10 +277,6 @@
     \end{example}
 
     \subsection{Series}
-
-    \begin{frameddefn}{Series}
-        TODO scrivi che possono convergere divergere etc
-    \end{frameddefn}
 
     \begin{frameddefn}{The harmonic series}
         The harmonic series is defined as follows: $$\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots$$
@@ -247,9 +290,17 @@
         Suppose that the harmonic series converges, thus $$\exists S \mid \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = S$$ then we have that $$\centeredsoe{S = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \dfrac{1}{5} + \dfrac{1}{6} \ldots = \\ = \rbk{1 + \dfrac{1}{2}} + \rbk{\dfrac{1}{3} + \dfrac{1}{4}} + \rbk{\dfrac{1}{5} + \dfrac{1}{6}} + \ldots > \\ > \rbk{\dfrac{1}{2} + \dfrac{1}{2}} + \rbk{\dfrac{1}{4} + \dfrac{1}{4}} + \rbk{\dfrac{1}{6} + \dfrac{1}{6}} + \ldots = \\ = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots = S}$$ implying that $S > S \lightning$.
     \end{proof}
 
-    \begin{frameddefn}[label={NON LO SO CAMBIAMI}]{TODO}
-        TODO
+    \begin{frameddefn}{Geometric series}
+        A \tbf{geometric series} is commonly written as $$\sum_{k = 0}^n{ar^k}$$ where $a \in \R$ is a coefficient and $r \in \R$ is the \tit{ration between adjacent terms}.
     \end{frameddefn}
+
+    \begin{framedprop}[label={geometric series conv}]{Convergence of geometric series}
+        For $r \in \R$ such that $\abs r < 1$, it holds that $$\sum_{k = 0}^{+ \infty}{ar^k} = \dfrac{a}{1 - r}$$
+    \end{framedprop}
+
+    \begin{proof}
+        Omitted.
+    \end{proof}
 
     \begin{framedthm}{Reciprocal of primes}
         The sum of the reciprocal of the prime numbers diverges. Using symbols $$\sum_{p \in \Primes}{\dfrac{1}{p}} = + \infty$$
@@ -259,7 +310,7 @@
         Consider the following inequality: $$\forall n \in \N \quad \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} > \sum_{k = 1}^{n}{\dfrac{1}{k}}$$ We can prove it with as follows:
 
         \begin{itemize}
-            \item for any given $p \in \Primes$, the fraction $\dfrac{p}{p - 1}$ can be rewritten as follows, by using the MISSINGCREF: $$\forall p \in \Primes \mid p \leq n \quad \dfrac{p}{p - 1} = \dfrac{1}{\frac{p - 1}{p}} = \dfrac{1}{1 - \dfrac{1}{p}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p^k}} = 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \ldots$$ which is the infinite sum of the reciprocal of the powers of some prime number $p$
+            \item for any given $p \in \Primes$, the fraction $\dfrac{p}{p - 1}$ can be rewritten as follows, by using the \cref{geometric series conv}: $$\forall p \in \Primes \mid p \leq n \quad \dfrac{p}{p - 1} = \dfrac{1}{\frac{p - 1}{p}} = \dfrac{1}{1 - \dfrac{1}{p}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p^k}} = 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \ldots$$ where $a = 1$ and $r = \dfrac{1}{p^k} : \dfrac{1}{p^{k -1}} = \dfrac{1}{p}$ -- which is the infinite sum of the reciprocal of the powers of some prime number $p$
             \item this means that $$\exists p_1, \ldots, p_j \in \Primes \mid \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} = p_1 \cdot \ldots \cdot p_j  \implies \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} =  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}}$$
             \item thus, thanks to the \cref{upf} this product expands to the sum of the reciprocal of every natural number that contains $p_1, \ldots, p_j$ in his prime factorization, namely $$\exists e_1, \ldots, e_j \in \N \mid\sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^{e_1} \cdot \ldots \cdot p_j^{e_j}}}$$
             \item finally, since $p_1, \ldots, p_j <= n$ this summation must contain at least every term contained inside $\displaystyle \sum_{k = 1}^{n}{\dfrac{1}{k}}$, which proves the inequality.
@@ -277,7 +328,7 @@
 
     \section{Solved exercises}
 
-    \subsection{TODO}
+    \subsection{Number theory}
 
     \begin{framedprob}{$n^2 + n$ is even}
         Show that for every $n \in \N$, $n^2 + n$ is an even number.
@@ -302,22 +353,6 @@
         Also, note that this proof does not show \tit{every non-prime number of the form $4n -1$}, since that is outside the scope of the problem.
     \end{proof}
 
-    \subsection{Induction}
-
-    \begin{framedprob}{Cardinality of the power set}
-        Show that for every given set $S$ such that $n := \abs{S}$ it holds true that $\abs{\powerset(S)} = 2^n$.
-    \end{framedprob}
-
-    \proofind{
-        The statement will be shown by induction over $n$, the number of elements contained into $S$.
-    }{
-        $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
-    }{
-        Assume that the statement is true for some fixed integer $n$.
-    }{
-        It must be shown that, for a given set of elements $S$ such that $\abs{S} = n+ 1$, it holds true that $\abs{\powerset(S)} = 2 ^{n +1}$. Consider a subset $S' \subseteq S$ such that $\abs{S'} = \abs{S} - 1 = n + 1 - n = n$, hence for the inductive hypothesis we have that $\abs{\powerset(S')} = 2^n$. Thus, to get the cardinality of $\powerset(S)$ the $(n + 1)$-th element inside $S - S'$ must be paired with every of the sets contained inside $\powerset(S')$, hence $$\powerset(S) = 2 \cdot \powerset(S') = 2 \cdot 2^n = 2^{n + 1}$$
-    }
-
     \begin{framedprob}{The $4n - 3$ set}
         Consider the following set: $$S := \{4n - 3 \mid n \in \N\}$$
 
@@ -334,6 +369,45 @@
             \item To show that $S$ is closed under multiplication, it suffices to show that $$\forall a, b \in \N \quad (4a -3)(4b- 3) = 16ab -12a -12b +9 = 4(4ab - 3a -3b +3) - 3 \in S$$
             \item TODO
         \end{enumerate}
+    \end{proof}
+
+    \subsection{Induction}
+
+    \begin{framedprob}{Cardinality of the power set}
+        Show that for every given set $S$ such that $n := \abs{S}$ it holds that $\abs{\powerset(S)} = 2^n$.
+    \end{framedprob}
+
+    \proofind{
+        The statement will be shown by induction over $n$, the number of elements contained into $S$.
+    }{
+        $n = 0 \implies S = \varnothing \implies \powerset(S) = \powerset(\varnothing) = \{\varnothing\} \implies \abs{\powerset(S)} = 1 = 2^0 = 2^n$.
+    }{
+        Assume that the statement is true for some fixed integer $n$.
+    }{
+        It must be shown that, for a given set of elements $S$ such that $\abs{S} = n+ 1$, it holds true that $\abs{\powerset(S)} = 2 ^{n +1}$. Consider a subset $S' \subseteq S$ such that $\abs{S'} = \abs{S} - 1 = n + 1 - n = n$, hence for the inductive hypothesis we have that $\abs{\powerset(S')} = 2^n$. Thus, to get the cardinality of $\powerset(S)$ the $(n + 1)$-th element inside $S - S'$ must be paired with every of the sets contained inside $\powerset(S')$, hence $$\powerset(S) = 2 \cdot \powerset(S') = 2 \cdot 2^n = 2^{n + 1}$$
+    }
+
+    \subsection{Continued fractions}
+
+    \begin{framedprob}{Limits of continued fractions}
+        What is the value that the following limit approaches? $$\lim_{n \to + \infty}{[2; 1, 4, n]}$$
+    \end{framedprob}
+
+    \begin{proof}
+        By using the \cref{cont frac alg}, we get the following table:
+
+        \begin{center}
+            \begin{tabular}{c|c|c|c|c|c} 
+                C.F. & & 2 & 1 & 4 & $n$ \\
+                \hline
+                $N$ & 1 & 2 & 3 & 14 & $14 \cdot n + 3$ \\
+                \hline
+                $D$ & 0 & 1 & 1 & 5 & $5 \cdot n + 1$ \\
+                \hline
+            \end{tabular}
+        \end{center}
+
+        which means that $$[2; 1, 4, n] = \dfrac{14n + 3}{5n + 1} \implies \lim_{n \to + \infty}{\dfrac{14n + 3}{5n + 1}} = \dfrac{14}{5}$$
     \end{proof}
 
 \end{document}
