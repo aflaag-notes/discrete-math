@@ -270,12 +270,33 @@
     \end{example}
 
     \begin{frameddefn}{The golden ratio}
+        The \tbf{golden ratio} is defined as the positive solution of the following equation: $$x ^2 - x - 1 = 0 \iff x = \dfrac{1 \pm \sqrt{5}}{2} \implies \varphi := \dfrac{1 \pm \sqrt{5}}{2}$$ and it's commonly denoted with the greek letter $\varphi$.
+    \end{frameddefn}
+
+    \begin{framedobs}[label={golden ratio cont frac}]{Continued fraction of $\varphi$}
+        Given the definition of the golden ratio, we have that $$\varphi ^2 - \varphi - 1 = 0 \iff \varphi^2 = \varphi + 1 \iff  \varphi = 1 + \dfrac{1}{\varphi}$$ and then from this equation we can repeatedly substitute $\varphi$ as follows: $$\varphi = 1 + \dfrac{1}{\varphi} = 1 + \dfrac{1}{1 + \dfrac{1}{\varphi}} = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\ddots}}}$$ which means that $$\varphi = [1; \overline 1]$$
+    \end{framedobs}
+
+    \begin{frameddefn}[label={fib def}]{The Fibonacci sequence}
         TODO
     \end{frameddefn}
 
-    \begin{example}[ICF of the Golden Ratio]
-        TODO
-    \end{example}
+    \begin{framedobs}{Continued fraction of $\varphi$}
+        Consider the following table of the continued fraction of the golden ratio, constructed via the \cref{cont frac alg} by using the result discussed inside the \cref{golden ratio cont frac}:
+
+        \begin{center}
+            \begin{tabular}{c|c|c|c|c|c|c|c}
+                C.F. & & 1 & 1 & 1 & 1 & 1 & \ldots \\
+                \hline
+                $N$ & 1 & 1 & 2 & 3 & 5 & 8 & \ldots \\
+                \hline
+                $D$ & 0 & 1 & 1 & 2 & 3 & 5 & \ldots \\
+                \hline
+            \end{tabular}
+        \end{center}
+        
+        we can spot that the pattern this table reveals is exactly the Fibonacci sequence, and this fact can be easily proved by letting $$x = \lim_{n \to + \infty}{\dfrac{F_{n + 1}}{F_n}}$$ note that, clearly, $x > 0$ -- and then, by using the \cref{fib def}, we get the following $$F_{n + 1} = F_n + F_{ n - 1} \iff \dfrac{F_{n + 1}}{F_n} = 1 + \dfrac{F_{n - 1}}{F_n} = 1 + \dfrac{1}{\frac{F_n}{F_{n- 1}}}$$ TODO DA FINIRE
+    \end{framedobs}
 
     \subsection{Series}
 
@@ -393,7 +414,7 @@
     \begin{framedprob}{Limits of continued fractions}
         \begin{enumerate}
             \item What is the value that the following limit approaches? $$\lim_{n \to + \infty}{[2; 1, 4, n]}$$
-            \item Consider the following sequence: $$\dfrac{25}{16}, \dfrac{49}{36}, \dfrac{81}{64}, \dfrac{121}{100}, \ldots$$ Computed the continued fractions of these ratios; what is the limit of this sequence?
+            \item Consider the following sequence: $$\dfrac{25}{16}, \dfrac{49}{36}, \dfrac{81}{64}, \dfrac{121}{100}, \ldots$$ Compute the continued fractions of these ratios; what is the limit of this sequence?
         \end{enumerate}
     \end{framedprob}
 
