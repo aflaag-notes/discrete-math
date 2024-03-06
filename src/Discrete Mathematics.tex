@@ -123,19 +123,19 @@
     \end{framedobs}
 
     \begin{frameddefn}{Integers}
-        TODO
+        The set of \tbf{integers} is defined as follows: $$\Z := \N \cup \{-x \mid x \in \N\}$$
     \end{frameddefn}
 
     \begin{frameddefn}{Divisor}
-        TODO
+        Given two numbers $a, b$, we say that $a$ \tbf{divides} $b$ -- therefore $a$ is called \tbf{divisor} of $b$ -- if and only if there exists an integer $k \in \Z$ such that $b = a \cdot k$ -- therefore $b$ is called \tbf{multiple} of $a$. Using symbols $$a \mid b \iff \exists k \in \Z \mid b = a \cdot k$$
     \end{frameddefn}
 
     \begin{example}[Divisors]
-        TODO
+        Given the numbers 15 and 5, we can say that $5 \mid 15$ because $3 \cdot 5 = 15$.
     \end{example}
 
     \begin{frameddefn}[label={primes}]{$\Primes$}
-        TODO
+        A number $x$ is said to be \tbf{prime} if no number between 2 and $x - 1$ divides it. Note that 0 and 1 are not considered prime numbers by convention. The set of \tbf{prime} numbers is defined as follows: $$\Primes = \{ x \in \N - \{0, 1\} \mid \nexists d \in [2, x - 1] : d \mid x\}$$
     \end{frameddefn}
 
     \begin{framedprop}[label={primes inf}]{$\Primes$ is infinite}
@@ -161,10 +161,17 @@
         \hrule
         \begin{algorithmic}[1]
             \Function{gcd}{$a, b$}
-                \State TODO
-                % \State $r_0 := b$
-                % \State $r_1 := a$
-                % \State $r_{i - 1} := r_1$
+                \State $r_0 := b$
+                \State $r_1 := a$
+                \State $r_{i - 1} := r_1$
+                \State $r_i : r_1 \mid r_i - r_0$
+                \State $r_{i + 1} : r_i \mid r_{i + 1} - r_{i - 1}$
+                \While{$r_{i + 1} \neq 0$}
+                    \State $r_{i - 1} = r_i$
+                    \State $r_i = r_{i + 1}$
+                    \State $r_{i + 1} : r_i \mid r_{i + 1} - r_{i - 1}$
+                \EndWhile
+                \State \tbf{return} $r_i$
             \EndFunction
         \end{algorithmic}
     \end{framedalgo}
@@ -269,16 +276,16 @@
         meaning that $$[2;1,3,1,5,4] = \dfrac{338}{121}$$
     \end{example}
 
-    \begin{frameddefn}{The golden ratio}
+    \begin{frameddefn}[label={golden ratio def}]{The golden ratio}
         The \tbf{golden ratio} is defined as the positive solution of the following equation: $$x ^2 - x - 1 = 0 \iff x = \dfrac{1 \pm \sqrt{5}}{2} \implies \varphi := \dfrac{1 \pm \sqrt{5}}{2}$$ and it's commonly denoted with the greek letter $\varphi$.
     \end{frameddefn}
 
     \begin{framedobs}[label={golden ratio cont frac}]{Continued fraction of $\varphi$}
-        Given the definition of the golden ratio, we have that $$\varphi ^2 - \varphi - 1 = 0 \iff \varphi^2 = \varphi + 1 \iff  \varphi = 1 + \dfrac{1}{\varphi}$$ and then from this equation we can repeatedly substitute $\varphi$ as follows: $$\varphi = 1 + \dfrac{1}{\varphi} = 1 + \dfrac{1}{1 + \dfrac{1}{\varphi}} = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\ddots}}}$$ which means that $$\varphi = [1; \overline 1]$$
+        Given the \cref{golden ratio def}, we have that $$\varphi ^2 - \varphi - 1 = 0 \iff \varphi^2 = \varphi + 1 \iff  \varphi = 1 + \dfrac{1}{\varphi}$$ and then from this equation we can repeatedly substitute $\varphi$ as follows: $$\varphi = 1 + \dfrac{1}{\varphi} = 1 + \dfrac{1}{1 + \dfrac{1}{\varphi}} = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\ddots}}}$$ which means that $$\varphi = [1; \overline 1]$$
     \end{framedobs}
 
     \begin{frameddefn}[label={fib def}]{The Fibonacci sequence}
-        TODO
+        The \tbf{Fibonacci sequence} is recursively defined as follows: $$F_n = \soe{ll}{0 & n = 0 \\ 1 & n = 1 \\ F_{n - 1} + F_{n - 2} & n \ge 2}$$
     \end{frameddefn}
 
     \begin{framedobs}{Continued fraction of $\varphi$}
@@ -295,7 +302,7 @@
             \end{tabular}
         \end{center}
         
-        we can spot that the pattern this table reveals is exactly the Fibonacci sequence, and this fact can be easily proved by letting $$x = \lim_{n \to + \infty}{\dfrac{F_{n + 1}}{F_n}}$$ note that, clearly, $x > 0$ -- and then, by using the \cref{fib def}, we get the following $$F_{n + 1} = F_n + F_{ n - 1} \iff \dfrac{F_{n + 1}}{F_n} = 1 + \dfrac{F_{n - 1}}{F_n} = 1 + \dfrac{1}{\frac{F_n}{F_{n- 1}}}$$ TODO DA FINIRE
+        we can spot that the pattern this table reveals is exactly the Fibonacci sequence, and this fact can be easily proved by letting $$x = \lim_{n \to + \infty}{\dfrac{F_{n + 1}}{F_n}} = \lim_{n \to + \infty}{\dfrac{F_n}{F_{n - 1}}}$$ note that, clearly, $x > 0$ -- and then, by using the \cref{fib def}, we get the following $$F_{n + 1} = F_n + F_{ n - 1} \iff \dfrac{F_{n + 1}}{F_n} = 1 + \dfrac{F_{n - 1}}{F_n} = 1 + \dfrac{1}{\frac{F_n}{F_{n- 1}}}$$ thus for $n \to + \infty$ we get that $$x = 1 + \dfrac{1}{x}$$ which is the same equation that we derived inside \cref{golden ratio cont frac}.
     \end{framedobs}
 
     \subsection{Series}
