@@ -523,5 +523,22 @@
         TODO INSIEME QUOZIENTE
     }
 
+    \newpage
+
+    \begin{framedprob}{A}
+        Prove that $$\forall p \in \Primes, k \in \N \mid p > k > 1 \quad \congmod{\binom{p}{k}}{0}{p}$$
+    \end{framedprob}
+
+    \begin{proof}
+        Note that $$\binom{p}{k} = \dfrac{p!}{k! (p - k) !} = p \cdot \dfrac{(p - 1) !}{k ! (p - k) !} \implies p \bigg\vert \binom{p}{k}$$ and note that, since $p \in \Primes$, $p$ can't be simplified with any of the factors of the denominator (since $p > k$ and $p > p - k$ because $k > 1$). Hence $\congmod{\binom{p}{k}}{0}{p}$
+    \end{proof}
+
+    \begin{framedprob}{Systems of congruence equations}
+        Solve the following system: $$\soe{l}{\congmod{x + 2y}{4}{7} \\ \congmod{4x+3y}{4}{7}}$$
+    \end{framedprob}
+
+    \begin{proof}
+        Note that $$x + 2y \equiv 4 \ (\bmod \ 7) \iff x = 4 - 2y \ (\bmod \ 7)$$ that we can substitute $x$ in the second equation as follows $$\centeredsoe{4 \cdot (4 - 2y)  + 3y \equiv 16 - 8 y  + 3y\equiv 2 - 5y \equiv 4 \ (\bmod \ 7) \iff \\ \iff \congmod{-5y}{2}{7} \iff \congmod{2y}{2}{7} \iff \congmod{y}{1}{7}}$$ and then $$\congmod{x + 2 \cdot 1}{4}{7} \iff \congmod{x}{2}{7}$$
+    \end{proof}
 
 \end{document}
