@@ -508,7 +508,20 @@
     \end{example}
 
     \begin{framedthm}{Equivalence relations and partitions}
-        A partition induces an equivalence relation, and viceversa. Using symbols $$$$
+        A partition induces an equivalence relation, and viceversa. Using symbols TODO MANCA L'INSIEME QUOZIENTE O FORSE LO CONSIDERA GIÀ FATTO?
     \end{framedthm}
+
+    \proofiff{
+        Consider a set $S$ partitioned as follows $$S = \bigsqcup_{i \in I}{S_i}$$ and consider the following relation $$x \sim y \iff \exists i \in I \mid x, y \in S_i$$ we can prove that this is an equivalence relation as follows:
+
+        \begin{itemize}
+            \item reflexive property, thus $$\forall x \in S \quad \exists i \in I \mid x \in S_i \iff x \sim x$$
+            \item symmetric property, thus $$\forall x, y \in S \quad x \sim y \implies \exists i \in I \mid x, y \in S_i \iff y \sim x$$
+            \item transitive property, thus $$\forall x, y, z \in S \quad \soe{l}{x \sim y \iff \exists i \in I \mid x , y \in S_i \\ y \sim z \iff \exists j \in I \mid y, z \in S_j} \implies y \in S_i \cap S_j$$ but recall that $S_i$ and $S_j$ are sets of a partition over $S$, which means that $$\soe{l}{i = j \implies S_i = S_j \implies x, y, z \in S_i = S_j \implies x \sim z \\ i \neq j \implies S_i \cap S_j = \varnothing \implies \nexists y \in S_i \cap S_j \implies x \nsim \land y \nsim z \ \lightning}$$
+        \end{itemize}
+    }{
+        TODO INSIEME QUOZIENTE
+    }
+
 
 \end{document}
