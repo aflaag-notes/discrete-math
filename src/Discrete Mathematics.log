@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  6 MAR 2024 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.1.27)  7 MAR 2024 12:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1049,10 +1049,12 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
-\@float@every@algorithm=\toks61
-\c@algorithm=\count510
+))) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip163
+\multirow@cntb=\count510
+\multirow@dima=\skip164
+\bigstrutjot=\dimen341
 ) (/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
@@ -1062,13 +1064,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@line=\count511
 \c@ALG@rem=\count512
 \c@ALG@nested=\count513
-\ALG@tlm=\skip163
-\ALG@thistlm=\skip164
+\ALG@tlm=\skip165
+\ALG@thistlm=\skip166
 \c@ALG@Lnr=\count514
 \c@ALG@blocknr=\count515
 \c@ALG@storecount=\count516
 \c@ALG@tmpcounter=\count517
-\ALG@tmplength=\skip165
+\ALG@tmplength=\skip167
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texmf-dist/tex/latex/fp/fp.sty
@@ -1124,59 +1126,59 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: circuitikz 2023/02/11{} The CircuiTikz circuit drawing package version 1.6.1
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen341
-\pgfarrowlength=\dimen342
-\pgfarrowwidth=\dimen343
-\pgfarrowlinewidth=\dimen344
+\pgfarrowinset=\dimen342
+\pgfarrowlength=\dimen343
+\pgfarrowwidth=\dimen344
+\pgfarrowlinewidth=\dimen345
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
 File: tikzlibrarybending.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
 File: pgfmodulebending.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
 File: pgfmodulenonlineartransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgftransformnonlinearflatness=\dimen345
+\pgftransformnonlinearflatness=\dimen346
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
 File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@curvilinear@time@a=\dimen346
-\pgf@curvilinear@length@a=\dimen347
-\pgf@curvilinear@length@b=\dimen348
-\pgf@curvilinear@length@c=\dimen349
-\pgf@curvilinear@length@d=\dimen350
+\pgf@curvilinear@time@a=\dimen347
+\pgf@curvilinear@length@a=\dimen348
+\pgf@curvilinear@length@b=\dimen349
+\pgf@curvilinear@length@c=\dimen350
+\pgf@curvilinear@length@d=\dimen351
 )
-\pgf@arrows@the@rigidity=\dimen351
+\pgf@arrows@the@rigidity=\dimen352
 )) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfpu.code.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
 \pgf@circ@count@a=\count533
 \pgf@circ@count@b=\count534
 \pgf@circ@count@c=\count535
-\pgf@circ@res@up=\dimen352
-\pgf@circ@res@down=\dimen353
-\pgf@circ@res@zero=\dimen354
-\pgf@circ@res@left=\dimen355
-\pgf@circ@res@right=\dimen356
-\pgf@circ@res@other=\dimen357
-\pgf@circ@res@step=\dimen358
-\pgf@circ@res@temp=\dimen359
-\pgf@circ@Rlen=\dimen360
-\pgf@circ@scaled@Rlen=\dimen361
-\pgfstartlinewidth=\dimen362
+\pgf@circ@res@up=\dimen353
+\pgf@circ@res@down=\dimen354
+\pgf@circ@res@zero=\dimen355
+\pgf@circ@res@left=\dimen356
+\pgf@circ@res@right=\dimen357
+\pgf@circ@res@other=\dimen358
+\pgf@circ@res@step=\dimen359
+\pgf@circ@res@temp=\dimen360
+\pgf@circ@Rlen=\dimen361
+\pgf@circ@scaled@Rlen=\dimen362
+\pgfstartlinewidth=\dimen363
 ) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex
 \ctikz@scratchbox=\box90
 ) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex)
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
 \pgf@circ@res@count=\count536
 ) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex
-\pgfcirc@labelshift=\dimen363
+\pgfcirc@labelshift=\dimen364
 ) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex)) (/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box91
 \UL@hyphenbox=\box92
-\UL@skip=\skip166
-\UL@hook=\toks62
-\UL@height=\dimen364
+\UL@skip=\skip168
+\UL@hook=\toks61
+\UL@height=\dimen365
 \UL@pe=\count537
-\UL@pixel=\dimen365
+\UL@pixel=\dimen366
 \ULC@box=\box93
 Package: ulem 2019/11/18
-\ULdepth=\dimen366
+\ULdepth=\dimen367
 ) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
  (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
@@ -1194,7 +1196,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count538
 )
-\@linkdim=\dimen367
+\@linkdim=\dimen368
 \Hy@linkcounter=\count539
 \Hy@pagecounter=\count540
  (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -1221,15 +1223,15 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4425.
 \c@Hy@tempcnt=\count542
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen368
+\XeTeXLinkMargin=\dimen369
  (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count543
-\Field@Width=\dimen369
-\Fld@charsize=\dimen370
+\Field@Width=\dimen370
+\Fld@charsize=\dimen371
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1258,7 +1260,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip167
+\Hy@SectionHShift=\skip169
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex
 File: tikzlibrarygraphs.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lib@auto@number=\count550
@@ -1290,7 +1292,7 @@ Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
 ) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2023/02/13 3.86 The Babel package
 \babel@savecnt=\count552
-\U@D=\dimen371
+\U@D=\dimen372
 \l@unhyphenated=\language5
  (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read5
@@ -1366,7 +1368,7 @@ File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen372
+\arrowsize=\dimen373
 ))) (../Nyx/nyx-frames.sty
 
 LaTeX Warning: You have requested package `../Nyx/nyx-frames',
@@ -1426,16 +1428,16 @@ LaTeX Font Info:    ... okay on input line 75.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count566
-\scratchdimen=\dimen373
+\scratchdimen=\dimen374
 \scratchbox=\box118
 \nofMPsegments=\count567
 \nofMParguments=\count568
-\everyMPshowfont=\toks63
+\everyMPshowfont=\toks62
 \MPscratchCnt=\count569
-\MPscratchDim=\dimen374
+\MPscratchDim=\dimen375
 \MPnumerator=\count570
 \makeMPintoPDFobject=\count571
-\everyMPtoPDFconversion=\toks64
+\everyMPtoPDFconversion=\toks63
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1761,7 +1763,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package cleveref Info: loaded `english' language definitions on input line 444.
 [14]
-Package cleveref Info: loaded `english' language definitions on input line 462.
+Package cleveref Info: loaded `english' language definitions on input line 479.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1770,8 +1772,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 462.
-[15] (./Discrete Mathematics.aux
+Package cleveref Info: loaded `english' language definitions on input line 479.
+[15]
+Overfull \hbox (32.65031pt too wide) detected at line 498
+[]
+ []
+
+Package cleveref Info: loaded `english' language definitions on input line 498.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+Package cleveref Info: loaded `english' language definitions on input line 498.
+[16]
+Package cleveref Info: loaded `english' language definitions on input line 514.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+Package cleveref Info: loaded `english' language definitions on input line 514.
+[17] (./Discrete Mathematics.aux
 Package cleveref Info: loaded `english' language definitions on input line 20.
 )
 
@@ -1784,18 +1811,18 @@ Package logreq Info: Writing requests to '"Discrete Mathematics".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 72540 strings out of 477974
- 1780071 string characters out of 5839631
- 2972361 words of memory out of 5000000
- 91688 multiletter control sequences out of 15000+600000
+ 72574 strings out of 477974
+ 1780623 string characters out of 5839630
+ 2972521 words of memory out of 5000000
+ 91712 multiletter control sequences out of 15000+600000
  541497 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 119i,12n,116p,1211b,2229s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 119i,13n,116p,1211b,2229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on "Discrete Mathematics.pdf" (17 pages, 454214 bytes).
+Output written on "Discrete Mathematics.pdf" (19 pages, 466395 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 500000)
+ 431 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
  104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

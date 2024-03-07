@@ -1,4 +1,4 @@
-PWD /home/aless/Desktop/notes/discrete-math/src
+PWD /home/phantasm/Scrivania/notes/discrete-math/src
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT Discrete Mathematics.tex
@@ -1174,19 +1174,17 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
-INPUT /usr/share/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty

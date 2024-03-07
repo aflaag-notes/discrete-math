@@ -8,7 +8,7 @@
 
 \def\useItalian{0}  % 1 = Italian, 0 = English
 
-\def\courseName{Discrete Math}
+\def\courseName{Discrete Mathematics}
 
 \def\coursePrerequisites{
     \begin{itemize}
@@ -458,5 +458,57 @@
             Ultimately, the limit approaches $$\lim_{k \to + \infty}{\dfrac{4k^2 + 4k + 1}{4k^2}} = \dfrac{4}{4} = 1$$
     \end{enumerate}
     \end{proof}
+
+    % \begin{frameddefn}{Associative property}
+    %     Given a set $S$, for $S$ holds the \tbf{associative property} if and only if $$\forall a, b, c \quad a + ()$$
+    % \end{frameddefn}
+
+    \begin{frameddefn}{Relation}
+        Given a set $S$, a \tbf{relation} $R$ over $S$ is a subset $R \subseteq S \times S$. Two members $a, b \in S$ are said to be \tbf{related} if and only if $(a, b) \in R$, also noted as $$a \sim b$$
+    \end{frameddefn}
+
+    \begin{frameddefn}{Equivalence relation}
+        Given a set $S$ and a relation $R$ over it, $R$ is said to be \tbf{equivalence relation} if and only if the following properties hold:
+
+        \begin{itemize}
+            \item \tbf{reflexive property}, i.e. $$\forall x \in S \quad x \sim x$$
+            \item \tbf{symmetric property}, i.e. $$\forall x, y \in S \quad x \sim y \implies y \sim x$$
+            \item \tbf{transitive property}, i.e. $$\forall x, y, z \in S \quad x \sim y \land y \sim z \implies x \sim z$$
+        \end{itemize}
+    \end{frameddefn}
+
+    \begin{frameddefn}{Congruence class}
+        TODO
+    \end{frameddefn}
+
+    \begin{frameddefn}{Modulus congruence}
+        Given two numbers $a, b \in \Z$ and some $n \in \N - \{0\}$, we say that \tbf{$a$ is congruent with $b$ modulo $n$} if and only if $n$ divides $a - b$. Using symbols $$\congmod{a}{b}{n} \iff n \mid a - b \iff \exists k \in \Z \mid nk = a - b$$
+    \end{frameddefn}
+
+    \begin{framedprop}{Modulus congruence equivalence relation}
+        The modulus congruence is an equivalence relation.
+    \end{framedprop}
+
+    \begin{proof}
+        Let $n \in \N - \{0\}$, to prove the statement, the following properties must hold:
+
+        \begin{itemize}
+            \item reflexive property, thus $$\forall a \in \Z \quad \congmod{a}{a}{n} \iff n \mid a - a = 0 \iff \exists k \in \Z \mid nk = 0 \iff k = 0$$ and note that $0 \in \Z$;
+            \item symmetric property, thus $$\centeredsoe{\forall a, b \in \Z \quad \congmod{a}{b}{n} \iff n \mid a -b \iff \\ \iff \exists k \in \Z \mid nk = a - b \iff -nk = b - a \iff n (-k) = b - a \iff \\ \exists -k \in \Z : n \mid b - a \iff \congmod{b}{a}{n}}$$ and note that $\forall k \in \Z \quad -k \in \Z$;
+            \item transitive property, thus $$\centeredsoe{\forall a, b, c \in \Z \quad \soe{l}{\congmod{a}{b}{n} \\ \congmod{b}{c}{n}} \iff \soe{l}{n \mid a - b \\ n \mid b -c} \iff \soe{l}{\exists k \in \Z \mid nk = a - b \\ \exists h \in \Z \mid nh = b - c} \iff \\ \iff \soe{l}{b = a - nk \\ nh = a - nk - c} \implies nh + nk = a -c \iff n (h + k) = a - c \iff \\ \iff \exists (k + h) \in \Z : n \mid a - c \iff \congmod{a}{c}{n}}$$
+        \end{itemize}
+    \end{proof}
+
+    \begin{frameddefn}{Partition}
+        Given a set $S$, a \tbf{partition} of $S$ is a set of \tit{mutually disjoint subsets of $S$} i.e. the subsets are non-empty and such that every element $x \in S$ is exactly in one of the subsets. Using symbols, given a set of indices $I$ we have that $$S = \bigsqcup_{i \in I}{S_i} \iff \forall i , j \in I \quad \soe{ll}{S_i = S_j & i = j \\ S_i \cap S_j = \varnothing & i \neq j}$$
+    \end{frameddefn}
+
+    \begin{example}[Partitions]
+        TODO
+    \end{example}
+
+    \begin{framedthm}{Equivalence relations and partitions}
+        A partition induces an equivalence relation, and viceversa. Using symbols $$$$
+    \end{framedthm}
 
 \end{document}
