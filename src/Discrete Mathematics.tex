@@ -94,267 +94,6 @@
 
     \chapter{TODO}
     
-    \section{TODO}
-    
-    \subsection{TODO}
-
-    \begin{frameddefn}{Peano's axioms}
-        The \tbf{Peano's axioms} are 5 axioms which define the set $\N$ of the \tbf{natural numbers}, and they are the following:
-
-        \begin{enumerate}[label=\roman*), font=\itshape]
-            \item $0 \in \N$
-            \item $\exists \func{\succfn}{\N}{\N}$, or equivalently, $\forall x \in \N \quad \succfn(x) \in \N$
-            \item $\forall x, y \in \N \quad x \neq y \implies \succfn(x) \neq \succfn(y)$
-            \item $\nexists x \in \N \mid \succfn(x) = 0$
-            \item $\forall S \subseteq \N \quad (0 \in S \land (\forall x \in S \quad \succfn(x) \in S)) \implies S = \N$
-        \end{enumerate}
-
-        \imp{Note} inside this notes, it will be assumed that $0 \in \N$.
-    \end{frameddefn}
-
-    \begin{framedprinc}{Induction principle}
-        Let $P$ be a property which is true for $n = 0$, thus $P(0)$ is true; also, for every $n \in \N$ we have that $P(n) \implies P(n + 1)$; then $P(n)$ is true for every $n \in \N$.
-
-        Using symbols, using the formal logic notation, we have that $$\dfrac{P(0) \quad P(n) \implies P(n + 1)}{ \forall n \quad P(n )}$$
-    \end{framedprinc}
-
-    \begin{framedobs}{The fifth Peano's axiom}
-        Note that the fifth Peano's axiom is equivalent to the induction principle, since, it states that for every subset $S$ of $\N$ containing 0 and closed under $\succfn$ must be equal to $\N$ itself.
-    \end{framedobs}
-
-    \begin{frameddefn}{Integers}
-        The set of \tbf{integers} is defined as follows: $$\Z := \N \cup \{-x \mid x \in \N\}$$
-    \end{frameddefn}
-
-    \begin{frameddefn}{Divisor}
-        Given two numbers $a, b$, we say that $a$ \tbf{divides} $b$ -- therefore $a$ is called \tbf{divisor} of $b$ -- if and only if there exists an integer $k \in \Z$ such that $b = a \cdot k$ -- therefore $b$ is called \tbf{multiple} of $a$. Using symbols $$a \mid b \iff \exists k \in \Z \mid b = a \cdot k$$
-    \end{frameddefn}
-
-    \begin{example}[Divisors]
-        Given the numbers 15 and 5, we can say that $5 \mid 15$ because $3 \cdot 5 = 15$.
-    \end{example}
-
-    \begin{frameddefn}[label={primes}]{$\Primes$}
-        A number $x$ is said to be \tbf{prime} if no number between 2 and $x - 1$ divides it. Note that 0 and 1 are not considered prime numbers by convention. The set of \tbf{prime} numbers is defined as follows: $$\Primes = \{ x \in \N - \{0, 1\} \mid \nexists d \in [2, x - 1] : d \mid x\}$$
-    \end{frameddefn}
-
-    \begin{framedprop}[label={primes inf}]{$\Primes$ is infinite}
-        There are infinitely many primes. Using symbols $$\abs{\Primes} = + \infty$$
-    \end{framedprop}
-
-    \begin{proof}
-        By way of contradiction, assume that $\Primes$ is finite, thus $$\exists n \in \N \mid \Primes = \{p_1, \ldots, p_n\}$$ and let $x = p_1 \cdot \ldots \cdot p_n$. Since $x \neq p_1, \ldots, p_n$, then $x \notin \Primes$, so $x$ is not a prime number; but $x$ can't be divided by any of the $p_1, \ldots, p_n$ either, because the remainder will always be 1. This means that $x$ is neither prime nor non-prime, which is a contradiction $\lightning$.
-    \end{proof}
-
-    \begin{frameddefn}[label={gcd}]{$\gcd$}
-        The $\tbf{gcd}$ (\tit{Greatest Common Divisor}) of two given numbers $a$, $b$ is the greatest of the divisors which $a$ and $b$ have in common. Using symbols, we say that $$d = \gcd(a, b) \iff \forall f \in \N : f \mid a \land f \mid b \quad f \mid d$$ If the $\gcd$ of two numbers is 1, they are said to be \tbf{coprime}.
-    \end{frameddefn}
-
-    \begin{example}[$\gcd$]
-        Given 15 and 63, we have that $\gcd(15, 63) = 3$.
-    \end{example}
-
-    \begin{framedalgo}[label={euclid}]{Euclid's algorithm}
-        \textbf{Input}: Two natural numbers $a, b$.\\
-        \textbf{Output}: $\gcd(a, b)$.
-
-        \hrule
-        \begin{algorithmic}[1]
-            \Function{gcd}{$a, b$}
-                \State $r_0 := b$
-                \State $r_1 := a$
-                \State $r_{i - 1} := r_1$
-                \State $r_i : r_1 \mid r_i - r_0$
-                \State $r_{i + 1} : r_i \mid r_{i + 1} - r_{i - 1}$
-                \While{$r_{i + 1} \neq 0$}
-                    \State $r_{i - 1} = r_i$
-                    \State $r_i = r_{i + 1}$
-                    \State $r_{i + 1} : r_i \mid r_{i + 1} - r_{i - 1}$
-                \EndWhile
-                \State \tbf{return} $r_i$
-            \EndFunction
-        \end{algorithmic}
-    \end{framedalgo}
-
-    \idea{
-        TODO
-    }
-
-    \begin{example}[Euclid's algorithm]
-        \label{euclid example}
-        To compute the $\gcd(341, 527)$, using the \cref{euclid}, we get the following: $$\centeredsoe{527 = 341 \cdot 1 + 186 \\ 341 = 186 \cdot 1 + 155 \\ 186 = 155 \cdot 1 + 31 \\ 155 = 31 \cdot 5 + 0}$$ hence we have that $$\gcd(341, 527) = 31$$
-    \end{example}
-
-    \begin{framedlem}[label={bezout}]{Bézout's identity}
-        Given a pair of numbers $a, b \in \Z$, there exists $x, y \in \Z$ such that the $\gcd(a, b)$ is a \href{https://en.wikipedia.org/wiki/Linear_combination}{linear combination} of $a$ and $b$. Using symbols $$\forall a, b \in \Z \quad \exists x, y \in \Z \mid \gcd(a, b) = ax + by$$
-    \end{framedlem}
-
-    \begin{proof}
-        Omitted.
-    \end{proof}
-
-    \begin{example}[Bézout's identities]
-        Using the \cref{euclid example}, in order to compute the Bézout's identity of 341 and 527, we need to do the following: $$31 = 186 - 155 \cdot 1 = 186 - (341 - 186 \cdot 1) = 2 \cdot 186 - 341 = 2 \cdot (527 - 341) - 341 = 2 \cdot 527 - 3 \cdot 341$$ thus the Bézout's identity is $$31 = 2 \cdot 527 - 3\cdot 341$$
-    \end{example}
-
-    \begin{framedcor}[label={prime divisors cor}]{Prime divisors}
-        Given a natural number $n \in \N$ and a prime number $p \in \Primes$ , it holds that $$p \nmid n \iff \gcd(p, n) = 1$$
-    \end{framedcor}
-
-    \proofiff{
-        Instead of proving that $p \nmid n \implies \gcd(p, n) = 1$, we will prove the contrapositive, namely that $\gcd(p, n) > 1 \implies p \mid n$. Hence, since $\gcd(p, n) \mid p$ by definition, because $p \in \Primes$ then $\gcd(p, n)$ must be either 1 or $p$ itself, and we assumed that $\gcd(p, n) > 1$, $\gcd(p, n)$ must be 1, which means that $p \mid n$.
-    }{
-        Note that $\gcd(p, n) = 1 \implies \exists x, y \in \Z \mid 1 = px + ny$ by the \cref{bezout}, hence if $p \mid a$ then $p \mid 1$ by the \cref{gcd}, which is impossibile because $p \in \Primes$ by the \cref{primes}.
-    }
-
-    \begin{framedlem}{Prime divisors}
-        Given a pair of numbers $a, b \in \N$, and a prime number $p \in \Primes$ such that $p \mid ab$, then either $p \mid a$ or $p \mid b$. Using symbols $$\forall a, b \in \N \quad \exists p \in \Primes : p \mid ab \implies p \mid a \lor p \mid b$$
-    \end{framedlem}
-
-    \begin{proof}
-        Without loss of generality, assume that $p \nmid a$, thus $\gcd(p, a) = 1$ by the \cref{prime divisors cor}; hence, for the \cref{bezout}, we have that $$\exists x, y \in \Z \mid 1 = px + ay \iff b = bpx + bay$$ Note that $p \mid ab \iff \exists k \in \Z \mid pk = ab$ which means that $$b = bpx + pky = p(bx+ky) \iff p \mid b$$ The same argument can be used to show that $p \nmid b \implies p \mid a$.
-    \end{proof}
-
-    \begin{framedthm}[label={upf}]{Fundamental theorem of arithmetic}
-        The \tbf{fundamental theorem of arithmetic}, also known as the \tbf{UPF} theorem (\tit{Unique Prime Factorization}) states that for every natural number $n \in \N$ there exists a unique prime factorization for $n$. Using symbols $$\forall n \in \N \quad \exists ! p_1, \ldots, p_k \in \Primes, e_1, \ldots, e_k \in \N \mid n = {p_1}^{e_1} \cdot \ldots \cdot {p_k}^{e_k}$$
-    \end{framedthm}
-
-    \begin{proof}
-        Omitted.
-    \end{proof}
-
-    \subsection{Continued fractions}
-
-    \begin{frameddefn}{Continued fraction}
-        A \tbf{continued fraction} is an expression obtained through an iterative process of representing a number as the sum of its \tit{integer part}, and the reciprocal of another number. Continued fractions can be both \tbf{finite} and \tbf{infinite}, and are represented with the following notation: $$a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{\ddots + \dfrac{1}{a_n}}}} = [a_0; a_1, a_2, \ldots , a_n]$$ for finite continued fractions, and $$a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{\ddots}}} = [a_0; a_1, a_2, \ldots]$$ for infinite continued fractions.
-    \end{frameddefn}
-
-    \begin{example}[Finite continued fractions]
-        \label{fin cont frac ex}
-        Consider the \cref{euclid example}; note that the Euclid algorithm can be used to derive the finite continued fraction of $\dfrac{527}{341}$, as follows: $$\centeredsoe{\frac{527}{341} = 1 + \frac{186}{341} \\ \frac{341}{186} = 1 + \frac{155}{186} \\ \frac{186}{155} = 1 + \frac{31}{155} \\ \frac{155}{31} = 5}$$ and then, rearranging $$\dfrac{527}{341} = 1 + \dfrac{1}{1 + \dfrac{155}{186}} = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{31}{155}}} =1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{5}}} = [1; 1, 1, 5]$$
-    \end{example}
-
-    \begin{example}[Infinite continued fractions]
-        Assume that there exists an $x$ such that $$\sqrt 2 = 1 + \dfrac{1}{x}$$ then rearrange as follows: $$\sqrt 2 = 1 + \dfrac{1}{x} \iff \sqrt 2 - 1 = \dfrac{1}{x} \iff x = \dfrac{1}{\sqrt 2 - 1} = \dfrac{\sqrt 2 + 1}{(\sqrt 2 - 1)(\sqrt 2+ 1)} = \sqrt 2 + 1$$ and now we can substitute $\sqrt 2$ with $1 + \dfrac{1}{x}$, yielding the following: $$x = 1 + \dfrac{1}{x} + 1 = 2 + \dfrac{1}{x}$$ Finally, this equation can be used to construct the infinite continued fraction of $\sqrt 2$, like this: $$x = 2 + \dfrac{1}{x} = 2 + \dfrac{1}{2 + \dfrac{1}{x}} = 2 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\ddots}}}$$ implying that $$\sqrt 2 = 1 + \dfrac{1}{x} = 1 + \dfrac{1}{2 + \dfrac{1}{2 + \dfrac{1}{\ddots}}} = [1; 2, 2, 2] = [1; \overline 2]$$
-    \end{example}
-
-    \begin{framedalgo}[label={cont frac alg}]{Continued fractions}
-        Given a continued fraction $[a_0; a_1, \ldots, a_n]$, the corresponding number can be computed by constructing the following table (note that $N_0: = 1$ and $D_0: = 0$, meaning that $a$ and $N, D$ differ by 1 position at each column)
-
-        \begin{center}
-            \begin{tabular}{c|c|c|c|c|c|c} 
-                C.F. & & $a_0$ & $a_1$ & $a_2$ & $\ldots$ & $a_n$ \\
-                \hline
-                $N$ & 1 & $a_0$ & $a_1 \cdot N_1 + N_0$ & $a_2 \cdot N_2 + N_1$ & $\ldots$ & $a_n \cdot N_n + N_{n - 1}$ \\
-                \hline
-                $D$ & 0 & 1 & $a_1 \cdot D_1 + D_0$ & $a_2 \cdot D_2 + D_1$ & $\ldots$ & $a_n \cdot D_n + D_{n - 1}$ \\
-                \hline
-            \end{tabular}
-        \end{center}
-
-        then, the answer is $$[a_0; a_1, \ldots, a_n] = \dfrac{N_{n + 1}}{D_{n + 1}}$$
-    \end{framedalgo}
-
-    \idea{
-        TODO
-    }
-
-    \begin{example}
-        To compute the number corresponding to the continued fraction $[2;1,3,1,5,4]$, the following table can be constructed:
-
-        \begin{center}
-            \begin{tabular}{c|c|c|c|c|c|c|c} 
-                C.F. & & 2 & 1 & 3 & 1 & 5 & 4 \\
-                \hline
-                $N$ & 1 & 2 & 3 & 11 & 14 & 81 & 338 \\
-                \hline
-                $D$ & 0 & 1 & 1 & 4 & 5 & 29 & 121 \\
-                \hline
-            \end{tabular}
-        \end{center}
-
-        meaning that $$[2;1,3,1,5,4] = \dfrac{338}{121}$$
-    \end{example}
-
-    \begin{frameddefn}[label={golden ratio def}]{The golden ratio}
-        The \tbf{golden ratio} is defined as the positive solution of the following equation: $$x ^2 - x - 1 = 0 \iff x = \dfrac{1 \pm \sqrt{5}}{2} \implies \varphi := \dfrac{1 \pm \sqrt{5}}{2}$$ and it's commonly denoted with the greek letter $\varphi$.
-    \end{frameddefn}
-
-    \begin{framedobs}[label={golden ratio cont frac}]{Continued fraction of $\varphi$}
-        Given the \cref{golden ratio def}, we have that $$\varphi ^2 - \varphi - 1 = 0 \iff \varphi^2 = \varphi + 1 \iff  \varphi = 1 + \dfrac{1}{\varphi}$$ and then from this equation we can repeatedly substitute $\varphi$ as follows: $$\varphi = 1 + \dfrac{1}{\varphi} = 1 + \dfrac{1}{1 + \dfrac{1}{\varphi}} = 1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{\ddots}}}$$ which means that $$\varphi = [1; \overline 1]$$
-    \end{framedobs}
-
-    \begin{frameddefn}[label={fib def}]{The Fibonacci sequence}
-        The \tbf{Fibonacci sequence} is recursively defined as follows: $$F_n = \soe{ll}{0 & n = 0 \\ 1 & n = 1 \\ F_{n - 1} + F_{n - 2} & n \ge 2}$$
-    \end{frameddefn}
-
-    \begin{framedobs}{Continued fraction of $\varphi$}
-        Consider the following table of the continued fraction of the golden ratio, constructed via the \cref{cont frac alg} by using the result discussed inside the \cref{golden ratio cont frac}:
-
-        \begin{center}
-            \begin{tabular}{c|c|c|c|c|c|c|c}
-                C.F. & & 1 & 1 & 1 & 1 & 1 & \ldots \\
-                \hline
-                $N$ & 1 & 1 & 2 & 3 & 5 & 8 & \ldots \\
-                \hline
-                $D$ & 0 & 1 & 1 & 2 & 3 & 5 & \ldots \\
-                \hline
-            \end{tabular}
-        \end{center}
-        
-        we can spot that the pattern this table reveals is exactly the Fibonacci sequence, and this fact can be easily proved by letting $$x = \lim_{n \to + \infty}{\dfrac{F_{n + 1}}{F_n}} = \lim_{n \to + \infty}{\dfrac{F_n}{F_{n - 1}}}$$ note that, clearly, $x > 0$ -- and then, by using the \cref{fib def}, we get the following $$F_{n + 1} = F_n + F_{ n - 1} \iff \dfrac{F_{n + 1}}{F_n} = 1 + \dfrac{F_{n - 1}}{F_n} = 1 + \dfrac{1}{\frac{F_n}{F_{n- 1}}}$$ thus for $n \to + \infty$ we get that $$x = 1 + \dfrac{1}{x}$$ which is the same equation that we derived inside \cref{golden ratio cont frac}.
-    \end{framedobs}
-
-    \subsection{Series}
-
-    \begin{frameddefn}{The harmonic series}
-        The harmonic series is defined as follows: $$\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots$$
-    \end{frameddefn}
-
-    \begin{framedprop}{Divergence of the harmonic series}
-        The harmonic series diverges.
-    \end{framedprop}
-
-    \begin{proof}
-        Suppose that the harmonic series converges, thus $$\exists S \mid \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} = S$$ then we have that $$\centeredsoe{S = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \dfrac{1}{5} + \dfrac{1}{6} \ldots = \\ = \rbk{1 + \dfrac{1}{2}} + \rbk{\dfrac{1}{3} + \dfrac{1}{4}} + \rbk{\dfrac{1}{5} + \dfrac{1}{6}} + \ldots > \\ > \rbk{\dfrac{1}{2} + \dfrac{1}{2}} + \rbk{\dfrac{1}{4} + \dfrac{1}{4}} + \rbk{\dfrac{1}{6} + \dfrac{1}{6}} + \ldots = \\ = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \ldots = S}$$ implying that $S > S \lightning$.
-    \end{proof}
-
-    \begin{frameddefn}{Geometric series}
-        A \tbf{geometric series} is commonly written as $$\sum_{k = 0}^n{ar^k}$$ where $a \in \R$ is a coefficient and $r \in \R$ is the \tit{ration between adjacent terms}.
-    \end{frameddefn}
-
-    \begin{framedprop}[label={geometric series conv}]{Convergence of geometric series}
-        For $r \in \R$ such that $\abs r < 1$, it holds that $$\sum_{k = 0}^{+ \infty}{ar^k} = \dfrac{a}{1 - r}$$
-    \end{framedprop}
-
-    \begin{proof}
-        Omitted.
-    \end{proof}
-
-    \begin{framedthm}{Reciprocal of primes}
-        The sum of the reciprocal of the prime numbers diverges. Using symbols $$\sum_{p \in \Primes}{\dfrac{1}{p}} = + \infty$$
-    \end{framedthm}
-
-    \begin{proof}
-        Consider the following inequality: $$\forall n \in \N \quad \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} > \sum_{k = 1}^{n}{\dfrac{1}{k}}$$ We can prove it with as follows:
-
-        \begin{itemize}
-            \item for any given $p \in \Primes$, the fraction $\dfrac{p}{p - 1}$ can be rewritten as follows, by using the \cref{geometric series conv}: $$\forall p \in \Primes \mid p \leq n \quad \dfrac{p}{p - 1} = \dfrac{1}{\frac{p - 1}{p}} = \dfrac{1}{1 - \dfrac{1}{p}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p^k}} = 1 + \dfrac{1}{p} + \dfrac{1}{p^2} + \ldots$$ where $a = 1$ and $r = \dfrac{1}{p^k} : \dfrac{1}{p^{k -1}} = \dfrac{1}{p}$ -- which is the infinite sum of the reciprocal of the powers of some prime number $p$
-            \item this means that $$\exists p_1, \ldots, p_j \in \Primes \mid \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} = p_1 \cdot \ldots \cdot p_j  \implies \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} =  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}}$$
-            \item thus, thanks to the \cref{upf} this product expands to the sum of the reciprocal of every natural number that contains $p_1, \ldots, p_j$ in his prime factorization, namely $$\exists e_1, \ldots, e_j \in \N \mid\sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^k}} \cdot \ldots \cdot  \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_j^k}} = \sum_{k = 0}^{+ \infty}{\dfrac{1}{p_1^{e_1} \cdot \ldots \cdot p_j^{e_j}}}$$
-            \item finally, since $p_1, \ldots, p_j <= n$ this summation must contain at least every term contained inside $\displaystyle \sum_{k = 1}^{n}{\dfrac{1}{k}}$, which proves the inequality.
-        \end{itemize}
-    \end{proof}
-
-    Now consider the following: $$\centeredsoe{\displaystyle \sum_{k = 1}^{+ \infty}{\dfrac{1}{k}} < \prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}} \iff \\ \displaystyle \iff \log \rbk{\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}}} < \rbk{\prod_{p \in \Primes \mid p \le n}{\dfrac{p}{p - 1}}} = \\ \displaystyle = \sum_{p \in \Primes \mid p \le n}{\log \rbk{\dfrac{p}{p - 1}}} = \sum_{p \in \Primes \mid p \le n}{\rbk{\log p - \log (p - 1)}}= \sum_{p \in \Primes \mid p \le n}{\int_{p - 1}^{p}{\dfrac{1}{x} \diff x}}}$$ and consider the area under the curve $\dfrac{1}{x}$ within the $[p - 1, p]$ interval, for some prime number $p$:
-
-    TODO METTI GRAFICO
-
-    since $$\forall x_1, x_2 \in \R \quad x_1 < x_2 \iff \dfrac{1}{x_1} > \dfrac{1}{x_2}$$ the function $\dfrac{1}{x}$ is monotonically decreasing, and in particular $$\forall p \in \Primes \mid p \le n \quad p -1 < p \implies \dfrac{1}{p - 1} > \dfrac{1}{p}$$ whic implies that the area under the curve $\dfrac{1}{x}$ within the $\dfrac[p-1, p]$ must be smaller than the area of the rectangle that has a base of of $p - (p - 1) = p - p + 1 = 1$ and an height of $\dfrac{1}{p - 1}$, namely an area of $1 \cdot \dfrac{1}{p - 1} = \dfrac{1}{1 - p}$. This implies that $$\sum_{p \in \Primes \mid p \le n}{\int_{p - 1}^p{\dfrac{1}{x} \diff x}} < \sum_{p \in \Primes \mid p \le n}{\dfrac{1}{p - 1}}$$
-
-    Suppose that $$\dfrac{1}{p -1} > \dfrac{2}{p}$$ then we have that $$\dfrac{1}{p -1} > \dfrac{2}{p} \iff p > 2 \cdot (p - 1) \iff p > 2p - 2 \iff 2 > 3p$$ which is not possibile because $p \in \Primes \mid p \le n$. This implies that $$\dfrac{1}{p - 1} < \dfrac{2}{p} \implies \sum_{p \in \Primes \mid p \le n}{\dfrac{1}{p - 1}} <\sum_{p \in \Primes \mid p \le n}{\dfrac{2}{p}}$$ and finally, this means that $$\log \rbk{\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}}} < \sum_{p \in \Primes \mid p \le n}{\dfrac{2}{p}} \iff \dfrac{1}{2} \log \rbk{\sum_{k = 1}^{+ \infty}{\dfrac{1}{k}}} < \sum_{p \in \Primes \mid p \le n}{\dfrac{1}{p}}$$ and because $\displaystyle \sum_{k =1}^{+ \infty}{\dfrac{1}{k}}$ diverges, the left-hand side of the inequality diverges, thus the right-hand side must diverge too. This proves the statement, because the primes $p \in \Primes$ such that $p \le n$ form a subset of $\Primes$.
-
-
     \section{Solved exercises}
 
     \subsection{Number theory}
@@ -428,7 +167,7 @@
     \begin{proof}
         \quad
         \begin{enumerate}
-            \item By using the \cref{cont frac alg}, we get the following table:
+            \item By using the CFA, we get the following table:
 
             \begin{center}
                 \begin{tabular}{c|c|c|c|c|c} 
@@ -442,7 +181,7 @@
             \end{center}
 
             which means that $$[2; 1, 4, n] = \dfrac{14n + 3}{5n + 1} \implies \lim_{n \to + \infty}{\dfrac{14n + 3}{5n + 1}} = \dfrac{14}{5}$$
-        \item We can convince ourselves that the sequence is $$\rbk{\dfrac{2k + 1}{2k}}^2$$ for some $k \in \N$. Thus, by following the \cref{fin cont frac ex}, we can compute the continued fractions of the given ratios (calculations omitted) and get the following results: $$\centeredsoe{k = 2 \implies \rbk{\dfrac{2 \cdot 2 + 1}{2 \cdot 2}}^2 = \rbk{\dfrac{5}{4}}^2 =  \dfrac{25}{16} = [1;1,1,3,2] \\k = 3 \implies \rbk{\dfrac{2 \cdot 3 + 1}{2 \cdot 3}}^2 = \rbk{\dfrac{7}{6}}^2 = \dfrac{49}{36} = [1;2,1,3,3] \\ k = 4 \implies \rbk{\dfrac{2 \cdot 4 + 1}{2 \cdot 4}}^2 = \rbk{\dfrac{9}{8}}^2 =\dfrac{81}{64} =[1;3,1,3,4] \\ k = 5 \implies \rbk{\dfrac{2 \cdot 5 + 1}{2 \cdot 5}}^2 = \rbk{\dfrac{11}{10}}^2 =\dfrac{121}{100} = [1;4,1,3,5]}$$ and we can easily prove that $$\rbk{\dfrac{2k + 1}{2k}}^2 = [1; k - 1, 1, 3, k]$$ by using the \cref{cont frac alg} and constructing the following table: 
+        \item We can convince ourselves that the sequence is $$\rbk{\dfrac{2k + 1}{2k}}^2$$ for some $k \in \N$. Thus we can compute the continued fractions of the given ratios (calculations omitted) and get the following results: $$\centeredsoe{k = 2 \implies \rbk{\dfrac{2 \cdot 2 + 1}{2 \cdot 2}}^2 = \rbk{\dfrac{5}{4}}^2 =  \dfrac{25}{16} = [1;1,1,3,2] \\k = 3 \implies \rbk{\dfrac{2 \cdot 3 + 1}{2 \cdot 3}}^2 = \rbk{\dfrac{7}{6}}^2 = \dfrac{49}{36} = [1;2,1,3,3] \\ k = 4 \implies \rbk{\dfrac{2 \cdot 4 + 1}{2 \cdot 4}}^2 = \rbk{\dfrac{9}{8}}^2 =\dfrac{81}{64} =[1;3,1,3,4] \\ k = 5 \implies \rbk{\dfrac{2 \cdot 5 + 1}{2 \cdot 5}}^2 = \rbk{\dfrac{11}{10}}^2 =\dfrac{121}{100} = [1;4,1,3,5]}$$ and we can easily prove that $$\rbk{\dfrac{2k + 1}{2k}}^2 = [1; k - 1, 1, 3, k]$$ by using the CFA and constructing the following table: 
 
             \begin{center}
                 \begin{tabular}{c|c|c|c|c|c|c} 
@@ -459,73 +198,7 @@
     \end{enumerate}
     \end{proof}
 
-    % \begin{frameddefn}{Associative property}
-    %     Given a set $S$, for $S$ holds the \tbf{associative property} if and only if $$\forall a, b, c \quad a + ()$$
-    % \end{frameddefn}
-
-    \begin{frameddefn}{Relation}
-        Given a set $S$, a \tbf{relation} $R$ over $S$ is a subset $R \subseteq S \times S$. Two members $a, b \in S$ are said to be \tbf{related} if and only if $(a, b) \in R$, also noted as $$a \sim b$$
-    \end{frameddefn}
-
-    \begin{frameddefn}{Equivalence relation}
-        Given a set $S$ and a relation $R$ over it, $R$ is said to be \tbf{equivalence relation} if and only if the following properties hold:
-
-        \begin{itemize}
-            \item \tbf{reflexive property}, i.e. $$\forall x \in S \quad x \sim x$$
-            \item \tbf{symmetric property}, i.e. $$\forall x, y \in S \quad x \sim y \implies y \sim x$$
-            \item \tbf{transitive property}, i.e. $$\forall x, y, z \in S \quad x \sim y \land y \sim z \implies x \sim z$$
-        \end{itemize}
-    \end{frameddefn}
-
-    \begin{frameddefn}{Congruence class}
-        TODO
-    \end{frameddefn}
-
-    \begin{frameddefn}{Modulus congruence}
-        Given two numbers $a, b \in \Z$ and some $n \in \N - \{0\}$, we say that \tbf{$a$ is congruent with $b$ modulo $n$} if and only if $n$ divides $a - b$. Using symbols $$\congmod{a}{b}{n} \iff n \mid a - b \iff \exists k \in \Z \mid nk = a - b$$
-    \end{frameddefn}
-
-    \begin{framedprop}{Modulus congruence equivalence relation}
-        The modulus congruence is an equivalence relation.
-    \end{framedprop}
-
-    \begin{proof}
-        Let $n \in \N - \{0\}$, to prove the statement, the following properties must hold:
-
-        \begin{itemize}
-            \item reflexive property, thus $$\forall a \in \Z \quad \congmod{a}{a}{n} \iff n \mid a - a = 0 \iff \exists k \in \Z \mid nk = 0 \iff k = 0$$ and note that $0 \in \Z$;
-            \item symmetric property, thus $$\centeredsoe{\forall a, b \in \Z \quad \congmod{a}{b}{n} \iff n \mid a -b \iff \\ \iff \exists k \in \Z \mid nk = a - b \iff -nk = b - a \iff n (-k) = b - a \iff \\ \exists -k \in \Z : n \mid b - a \iff \congmod{b}{a}{n}}$$ and note that $\forall k \in \Z \quad -k \in \Z$;
-            \item transitive property, thus $$\centeredsoe{\forall a, b, c \in \Z \quad \soe{l}{\congmod{a}{b}{n} \\ \congmod{b}{c}{n}} \iff \soe{l}{n \mid a - b \\ n \mid b -c} \iff \soe{l}{\exists k \in \Z \mid nk = a - b \\ \exists h \in \Z \mid nh = b - c} \iff \\ \iff \soe{l}{b = a - nk \\ nh = a - nk - c} \implies nh + nk = a -c \iff n (h + k) = a - c \iff \\ \iff \exists (k + h) \in \Z : n \mid a - c \iff \congmod{a}{c}{n}}$$
-        \end{itemize}
-    \end{proof}
-
-    \begin{frameddefn}{Partition}
-        Given a set $S$, a \tbf{partition} of $S$ is a set of \tit{mutually disjoint subsets of $S$} i.e. the subsets are non-empty and such that every element $x \in S$ is exactly in one of the subsets. Using symbols, given a set of indices $I$ we have that $$S = \bigsqcup_{i \in I}{S_i} \iff \forall i , j \in I \quad \soe{ll}{S_i = S_j & i = j \\ S_i \cap S_j = \varnothing & i \neq j}$$
-    \end{frameddefn}
-
-    \begin{example}[Partitions]
-        TODO
-    \end{example}
-
-    \begin{framedthm}{Equivalence relations and partitions}
-        A partition induces an equivalence relation, and viceversa. Using symbols TODO MANCA L'INSIEME QUOZIENTE O FORSE LO CONSIDERA GIÀ FATTO?
-    \end{framedthm}
-
-    \proofiff{
-        Consider a set $S$ partitioned as follows $$S = \bigsqcup_{i \in I}{S_i}$$ and consider the following relation $$x \sim y \iff \exists i \in I \mid x, y \in S_i$$ we can prove that this is an equivalence relation as follows:
-
-        \begin{itemize}
-            \item reflexive property, thus $$\forall x \in S \quad \exists i \in I \mid x \in S_i \iff x \sim x$$
-            \item symmetric property, thus $$\forall x, y \in S \quad x \sim y \implies \exists i \in I \mid x, y \in S_i \iff y \sim x$$
-            \item transitive property, thus $$\forall x, y, z \in S \quad \soe{l}{x \sim y \iff \exists i \in I \mid x , y \in S_i \\ y \sim z \iff \exists j \in I \mid y, z \in S_j} \implies y \in S_i \cap S_j$$ but recall that $S_i$ and $S_j$ are sets of a partition over $S$, which means that $$\soe{l}{i = j \implies S_i = S_j \implies x, y, z \in S_i = S_j \implies x \sim z \\ i \neq j \implies S_i \cap S_j = \varnothing \implies \nexists y \in S_i \cap S_j \implies x \nsim \land y \nsim z \ \lightning}$$
-        \end{itemize}
-    }{
-        TODO INSIEME QUOZIENTE
-    }
-
-    \newpage
-
-    \begin{framedprob}{A}
+    \begin{framedprob}{Binomial coefficients}
         Prove that $$\forall p \in \Primes, k \in \N \mid p > k > 1 \quad \congmod{\binom{p}{k}}{0}{p}$$
     \end{framedprob}
 
@@ -534,11 +207,20 @@
     \end{proof}
 
     \begin{framedprob}{Systems of congruence equations}
-        Solve the following system: $$\soe{l}{\congmod{x + 2y}{4}{7} \\ \congmod{4x+3y}{4}{7}}$$
+        Solve the following system: $$\soe{l}{\congmod{x + 2y}{4}{7} \\ \congmod{4x+3y}{4}{7}}$$ Are there any solutions in $\Z_5$?
     \end{framedprob}
 
     \begin{proof}
         Note that $$x + 2y \equiv 4 \ (\bmod \ 7) \iff x = 4 - 2y \ (\bmod \ 7)$$ that we can substitute $x$ in the second equation as follows $$\centeredsoe{4 \cdot (4 - 2y)  + 3y \equiv 16 - 8 y  + 3y\equiv 2 - 5y \equiv 4 \ (\bmod \ 7) \iff \\ \iff \congmod{-5y}{2}{7} \iff \congmod{2y}{2}{7} \iff \congmod{y}{1}{7}}$$ and then $$\congmod{x + 2 \cdot 1}{4}{7} \iff \congmod{x}{2}{7}$$
+
+        Instead, if we try to solve the following system $$\soe{l}{\congmod{x + 2y}{4}{5} \\ \congmod{4x+3y}{4}{5}}$$ and we substitute $x$ in the second equation, we get that $$16 - 8y + 3y \equiv 1 - 5y \ \equiv 4 \ (\bmod \ 5) \iff -5y \equiv 5 \ (\bmod \ 5)$$ but since $\gcd(-5, 5) = -5 \neq 1$ then $[5] \notin \Z_5^*$, which means that the system has no solutions.
     \end{proof}
 
+    \begin{framedprob}{Quadratic congruence equations}
+        Solve the following equation in $\Z_{11}$ $$x^2 + 3x + 4 \equiv 0 \ (\bmod \ 11)$$
+    \end{framedprob}
+
+    \begin{proof}
+        By solving for $x$ in $\Z_{11}$ we get that \centeredeq{0.9}{$x_{1, 2} \equiv \dfrac{-3 \pm \sqrt{9 - 4 \cdot 4}}{2} \equiv \dfrac{-3 \pm \sqrt{-7}}{2} \equiv \dfrac{-3 \pm \sqrt 4}{2} \equiv \dfrac{-3 \pm 2}{2} \equiv \dfrac{8 \pm 2}{2} \implies \soe{l}{\congmod{x}{5}{11} \\ \congmod{x}{3}{11}}$}
+    \end{proof}
 \end{document}
