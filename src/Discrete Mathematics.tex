@@ -203,7 +203,7 @@
     \end{framedprob}
 
     \begin{proof}
-        Note that $$\binom{p}{k} = \dfrac{p!}{k! (p - k) !} = p \cdot \dfrac{(p - 1) !}{k ! (p - k) !} \implies p \bigg\vert \binom{p}{k}$$ and note that, since $p \in \Primes$, $p$ can't be simplified with any of the factors of the denominator (since $p > k$ and $p > p - k$ because $k > 1$). Hence $\congmod{\binom{p}{k}}{0}{p}$
+        Note that $$\binom{p}{k} = \dfrac{p!}{k! (p - k) !} = p \cdot \dfrac{(p - 1) !}{k ! (p - k) !} \implies p \bigg\vert \binom{p}{k}$$ and note that, since $p \in \Primes$, $p$ can't be simplified with any of the factors of the denominator (since $p > k$ and $p > p - k$ because $k > 1$), hence $$\congmod{\binom{p}{k}}{0}{p}$$
     \end{proof}
 
     \begin{framedprob}{Systems of congruence equations}
@@ -222,5 +222,21 @@
 
     \begin{proof}
         By solving for $x$ in $\Z_{11}$ we get that \centeredeq{0.9}{$x_{1, 2} \equiv \dfrac{-3 \pm \sqrt{9 - 4 \cdot 4}}{2} \equiv \dfrac{-3 \pm \sqrt{-7}}{2} \equiv \dfrac{-3 \pm \sqrt 4}{2} \equiv \dfrac{-3 \pm 2}{2} \equiv \dfrac{8 \pm 2}{2} \implies \soe{l}{\congmod{x}{5}{11} \\ \congmod{x}{3}{11}}$}
+    \end{proof}
+    
+    \begin{framedprob}{Divisibility criterion for 13}
+        By imitating the divisibility criterion for 7, invent a divisibility criterion for 13.
+    \end{framedprob}
+
+    \begin{proof}
+        By imitating the divisibility criterion for 7, to check if a number is divisible by 13 the following procedure can be applied (remembering that $\congmod{10}{-3}{13}$): \centeredeq{0.9}{$\centeredsoe{n_1 \ldots n_k \equiv \displaystyle \sum_{i = 1}^{k}{n_i \cdot 10^{k -i}} \equiv n_1 10^{k - 1} + \ldots + n_{k - 1} 10^1 + n_k 10^0 \equiv \\ \equiv 10 \cdot (n_1 10^{k - 2} + \ldots + n_{k - 1}10^0) + n_k \equiv -3 \cdot (n_1 10^{k - 2} + \ldots + n_{k - 1}10^0) + n_k \equiv: n' \ (\bmod \ 13)}$} and the same process can be repeated for $n'$ recursively, until the number can be trivially checked.
+    \end{proof}
+
+    \begin{framedprob}{Remainders}
+        Find the remainder of the division by 9 and by 10 of the number $${325437}^{759}$$
+    \end{framedprob}
+
+    \begin{proof}
+        We can compute the remainder of the division by 9 by doing the following: $${325437}^{759} \equiv 6^{759} \equiv 6 ^ {9 \cdot 84 +3 } \equiv {10077696}^84 \cdot 216 = 0 \ (\bmod \ 9)$$ Likewise, we can compute the remainder of the division by 10 by doing the following: $$\centeredsoe{{325437}^{759} \equiv 7^{759} \equiv 7 ^ {9 \cdot 84 +3 } \equiv {40353607}^{84} \cdot 343 = 7^{84} \cdot 3 \equiv 7^{8 \cdot 10 + 4} \cdot 3 \equiv \\ \equiv 282475249^{10} \cdot 7^4 \cdot 3 \equiv 9 ^{10} \cdot 1 \cdot 3 \equiv 3486784401 \cdot 3 \equiv 1 \cdot 3 \equiv 3 \ (\bmod \ 10)}$$
     \end{proof}
 \end{document}
