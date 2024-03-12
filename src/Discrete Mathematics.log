@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  11 MAR 2024 20:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  12 MAR 2024 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -43,9 +43,9 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
  (/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-)) (../Nyx/nyx-packages.sty
+)) (../../packages/Nyx/nyx-packages.sty
 
-LaTeX Warning: You have requested package `../Nyx/nyx-packages',
+LaTeX Warning: You have requested package `../../packages/Nyx/nyx-packages',
                but the package provides `nyx-packages'.
 
 Package: nyx-packages Nyx Required Packages
@@ -1336,9 +1336,9 @@ Package cleveref Info: always capitalise cross-reference names on input line 783
 Package cleveref Info: include cross-reference names in hyperlinks on input line 7836.
 Package cleveref Info: always capitalise cross-reference names on input line 7852.
 Package cleveref Info: include cross-reference names in hyperlinks on input line 7852.
-)) (../Nyx/nyx-styles.sty
+)) (../../packages/Nyx/nyx-styles.sty
 
-LaTeX Warning: You have requested package `../Nyx/nyx-styles',
+LaTeX Warning: You have requested package `../../packages/Nyx/nyx-styles',
                but the package provides `nyx-styles'.
 
 Package: nyx-styles Nyx Styles
@@ -1373,9 +1373,9 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen373
-))) (../Nyx/nyx-frames.sty
+))) (../../packages/Nyx/nyx-frames.sty
 
-LaTeX Warning: You have requested package `../Nyx/nyx-frames',
+LaTeX Warning: You have requested package `../../packages/Nyx/nyx-frames',
                but the package provides `nyx-frames'.
 
 Package: nyx-frames Nyx Frames
@@ -1391,19 +1391,19 @@ Package: nyx-frames Nyx Frames
 \c@tcb@cnt@framedalgo=\count564
 \c@example=\count565
 \c@nonexample=\count566
-) (../Nyx/nyx-macros.sty
+) (../../packages/Nyx/nyx-macros.sty
 
-LaTeX Warning: You have requested package `../Nyx/nyx-macros',
+LaTeX Warning: You have requested package `../../packages/Nyx/nyx-macros',
                but the package provides `nyx-macros'.
 
 Package: nyx-macros Nyx Macros
-) (../Nyx/nyx-title.sty
+) (../../packages/Nyx/nyx-title.sty
 
-LaTeX Warning: You have requested package `../Nyx/nyx-title',
+LaTeX Warning: You have requested package `../../packages/Nyx/nyx-title',
                but the package provides `nyx-title'.
 
 Package: nyx-title Nyx Titlepage
-) (../Nyx/nyx-intro.sty)
+) (../../packages/Nyx/nyx-intro.sty)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1572,10 +1572,10 @@ Package hyperref Info: Link coloring ON on input line 75.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../Nyx/logo.png, id=31, 803.0pt x 301.125pt>
-File: ../Nyx/logo.png Graphic file (type png)
-<use ../Nyx/logo.png>
-Package pdftex.def Info: ../Nyx/logo.png  used on input line 76.
+<../../packages/Nyx/logo.png, id=31, 803.0pt x 301.125pt>
+File: ../../packages/Nyx/logo.png Graphic file (type png)
+<use ../../packages/Nyx/logo.png>
+Package pdftex.def Info: ../../packages/Nyx/logo.png  used on input line 76.
 (pdftex.def)             Requested size: 281.10323pt x 105.41316pt.
 
 Overfull \hbox (30.0pt too wide) in paragraph at lines 76--76
@@ -1600,7 +1600,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 76--76
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <../Nyx/logo.png>] (./Discrete Mathematics.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <../../packages/Nyx/logo.png>] (./Discrete Mathematics.toc
 Package cleveref Info: loaded `english' language definitions on input line 1.
 )
 \tf@toc=\write6
@@ -1711,14 +1711,14 @@ Package logreq Info: Writing requests to '"Discrete Mathematics".run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  72431 strings out of 477974
- 1778594 string characters out of 5839631
- 2966438 words of memory out of 5000000
+ 1778897 string characters out of 5839631
+ 2966177 words of memory out of 5000000
  91636 multiletter control sequences out of 15000+600000
  536948 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  119i,12n,116p,1211b,2229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on "Discrete Mathematics.pdf" (10 pages, 342144 bytes).
+Output written on "Discrete Mathematics.pdf" (10 pages, 342318 bytes).
 PDF statistics:
  243 PDF objects out of 1000 (max. 8388607)
  185 compressed objects within 2 object streams
