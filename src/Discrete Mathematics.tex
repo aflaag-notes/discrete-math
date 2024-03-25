@@ -268,4 +268,42 @@
             \item First, we can evaluate the smallest class representatives for the given equations in their respective moduli: $$\soe{l}{\congmod{6x}{3}{9} \\ \congmod{9x}{2}{14} \\ \congmod{3x}{1}{5}}$$ Then, in the second and third equation we can remove the $x$ coefficients since $$\centeredsoe{\gcd(9, 14) = 1 \implies \exists [9]^{-1} \in \Z_{14} \\ \gcd(3, 5) = 1 \implies \exists [3]^{-1} \in \Z_{5}}$$ and in fact $$\centeredsoe{9 \cdot 11 \equiv 99 \equiv 1 \ (\bmod \ 14) \implies [9]^{-1} = [11] \\ 3 \cdot 2 \equiv 6 \equiv 1 \ (\bmod \ 5) \implies [3]^{-1} = [2]}$$ But since the $x$ coefficient of the first equation is 6, which is not invertible in $\Z_9$, to eliminate the 6 in front of the $x$ we can use the following property $$\soe{l}{\congmod{ac}{bc}{n} \\ d:= \gcd(c, n)} \implies a \equiv b \ \rbk{\bmod \ \dfrac{n}{d}}$$ applied as follows $$\soe{l}{\congmod{3 \cdot 2x}{3}{9} \\ \gcd(3, 9) = 3} \implies \congmod{2x}{1}{3}$$ and since $$\gcd(2, 3) = 1 \implies \exists [2]^{-1} \in \Z_{3}$$ we have that $$2 \cdot 2 \equiv 4 \equiv 1 \ (\bmod \ 3)$$ thus the system becomes $$\soe{l}{\congmod{x}{1 \cdot2 \equiv 2}{3} \\ \congmod{x}{2 \cdot 11 \equiv 22 \equiv 8}{14} \\ \congmod{x}{1 \cdot 2 \equiv 2}{5}}$$ Now TODO
         \end{enumerate}
     \end{proof}
+
+    \begin{framedprob}{TODO}
+        TODO
+    \end{framedprob}
+
+    \begin{proof}
+        TODO
+    \end{proof}
+
+    \begin{framedprob}{Group theory}
+        \begin{enumerate}
+            \item Prove that the only homomorphism between $\Z_{15}$ and $\mathcal D_4$ is the trivial homomorphism.
+            \item Prove that $\mathcal D_3$ and $\mathcal S_3$ as isomorphic.
+            \item Show that the kernel of a group homomorphism $\func{f}{G}{G'}$ is a subgroup of $G$.
+            \item With the notations of the previous exercise, show that the image $\im f$ of a group homomorphism is a subgroup of $G'$.
+            \item Check that the 24 permutations in $\mathcal S_4$ split into two subsets: 12 are even and 12 are odd. Call $\mathcal A_n$ the subset of even permutations; check that $\mathcal A_4$ is a subgroup of $\mathcal S_4$.
+        \end{enumerate}
+    \end{framedprob}
+
+    \begin{proof}
+        \quad
+        \begin{enumerate}
+            \item Let $$\func{f}{\Z_{15}}{\mathcal D_4}$$ be a homomorphism between $(\Z_{15}, +)$ and $(\mathcal D_4, \cdot)$; since $f$ is a homomorphism, we have that $$f([0]) = r_0$$ which means that $$\forall k \in \N \quad r_0 = f([0]) = f(15k) = f(\underbrace{k + \ldots + k}_{15 \ \textrm{times}}) = \underbrace{f(k) \cdot \ldots \cdot f(k)}_{15 \ \textrm{times}} = f^{15}(k)$$ and in particular, this equation shows that $f(k)$ can't be a symmetry -- since no symmetry raised to an odd power, namely 15, can yield $r_0$ -- $f(k)$ must be a rotation, which means that $$\forall k \in \N \quad r_0 = f^{15 \ (\textrm{mod} \ 4)}(k) = f^3(k) \implies f(k) = r_0$$ hence for every $k \in \N$, we have that $f(k) = r_0$. Finally, since this argument doesn't involve any particular characteristic of $f$ -- other than $f$ being a homomorphism -- this means that every homomorphism must be the trivial homomorphism.
+            \item TODO
+            \item To show that $\ker f \leqslant G$, we must show the following properties:
+                \begin{itemize}
+                    \item since $f$ is a homomorphism, we have that $$f(1_G) = 1_{G'}$$ which means that $$1_{G} \in \ker f$$ hence $\ker f$ has the identity element;
+                    \item to show the closure under the group operation, we show that $$\forall x, y \in \ker f \quad f(x) = f(y) = 1_{G'} \implies f(x \cdot y) = f(x) \cdot f(y) = 1_{G'} \cdot 1_{G'} = 1_{G'}$$ thus $x \cdot y \in \ker f$
+                    \item note that $$\forall x \in \ker f \quad f(x) = 1_{G'} \iff f(x)^{-1} = 1_{G'}^{-1} = 1_{G'}$$ and since $f$ is a homomorphism, we have that $$1_{G'} = f(x)^{-1} = f\rbk{x^{-1}} \implies x^{-1} \in \ker f$$
+                \end{itemize}
+            \item To show that $\im f \leqslant G$, we must show the following properties:
+                \begin{itemize}
+                    \item note that $$f(1_G) = 1_{G'} \implies 1_G \in \im f$$
+                    \item to show the closure under the group operation, we show that $$\forall x, y \in \im f \quad \exists a, b \in G \mid \soe{l}{x = f(a) \\ y = f(b)}$$ meaning that $$x \cdot y = f(a) \cdot f(b) = f(a \cdot b) \implies \exists a \cdot b \in G \mid x \cdot y = f(a \cdot b) \implies x \cdot y \in \im f$$
+                    \item note that $$\centeredsoe{\forall x \in \im f \quad \exists a \in G \mid f(a) = x \iff \\ \iff f(a)^{-1} = x^{-1} \iff f\rbk{a^{-1}} = x^{-1} \implies x^{-1} \in \im f}$$
+                \end{itemize}
+        \end{enumerate}
+    \end{proof}
 \end{document}
